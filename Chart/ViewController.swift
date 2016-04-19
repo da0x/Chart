@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var bar1: CompoundBarChartView!
-    @IBOutlet weak var bar2: CompoundBarChartView!
+    @IBOutlet weak var bar1: CompoundBar!
+    @IBOutlet weak var bar2: CompoundBar!
+    
+    @IBOutlet weak var circle1: Circle!
+    @IBOutlet weak var circle2: Circle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,9 @@ class ViewController: UIViewController {
     @IBAction func b1(sender: AnyObject) {
         bar1.setValues(v1, animated: animate)
         bar2.setValues(t1, animated: animate)
+        
+        circle1.userData = v1
+        circle2.userData = t1
     }
 
     @IBAction func b2(sender: AnyObject) {

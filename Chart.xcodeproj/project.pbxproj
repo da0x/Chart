@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4FBE41031CC535EC0056DFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE41021CC535EC0056DFE3 /* AppDelegate.swift */; };
-		4FBE41051CC535EC0056DFE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE41041CC535EC0056DFE3 /* ViewController.swift */; };
-		4FBE41081CC535EC0056DFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBE41061CC535EC0056DFE3 /* Main.storyboard */; };
-		4FBE410A1CC535EC0056DFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBE41091CC535EC0056DFE3 /* Assets.xcassets */; };
-		4FBE410D1CC535EC0056DFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBE410B1CC535EC0056DFE3 /* LaunchScreen.storyboard */; };
-		4FBE41181CC535EC0056DFE3 /* CompoundBarChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE41171CC535EC0056DFE3 /* CompoundBarChartTests.swift */; };
-		4FBE41231CC536050056DFE3 /* CompoundBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE41221CC536050056DFE3 /* CompoundBarChartView.swift */; };
-		4FBE41261CC5364E0056DFE3 /* CompoundBarChartCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE41241CC5364E0056DFE3 /* CompoundBarChartCalculator.swift */; };
-		4FBE41281CC5374C0056DFE3 /* CompoundBarChartCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE41251CC5364E0056DFE3 /* CompoundBarChartCalculatorTests.swift */; };
+		4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */; };
+		4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD581CC6EC3F00A9389E /* Assets.xcassets */; };
+		4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD5E1CC6EC3F00A9389E /* Circle.swift */; };
+		4FACDD6B1CC6EC3F00A9389E /* CircleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD5F1CC6EC3F00A9389E /* CircleCalculator.swift */; };
+		4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD601CC6EC3F00A9389E /* CompoundBar.swift */; };
+		4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD611CC6EC3F00A9389E /* CompoundBarCalculator.swift */; };
+		4FACDD711CC6EC3F00A9389E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD651CC6EC3F00A9389E /* ViewController.swift */; };
+		4FACDD781CC6EC5B00A9389E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD741CC6EC5500A9389E /* Info.plist */; };
+		4FACDD791CC6EC5E00A9389E /* CompoundBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD731CC6EC5500A9389E /* CompoundBarTests.swift */; };
+		4FACDD7A1CC6EC6200A9389E /* CircleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD721CC6EC5500A9389E /* CircleTests.swift */; };
+		4FACDD7D1CC6EDB900A9389E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5C1CC6EC3F00A9389E /* Main.storyboard */; };
+		4FACDD7E1CC6EDBF00A9389E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,19 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chart/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD581CC6EC3F00A9389E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chart/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		4FACDD5B1CC6EC3F00A9389E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FACDD5D1CC6EC3F00A9389E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		4FACDD5E1CC6EC3F00A9389E /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circle.swift; path = Chart/Circle.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD5F1CC6EC3F00A9389E /* CircleCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleCalculator.swift; path = Chart/CircleCalculator.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD601CC6EC3F00A9389E /* CompoundBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundBar.swift; path = Chart/CompoundBar.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD611CC6EC3F00A9389E /* CompoundBarCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundBarCalculator.swift; path = Chart/CompoundBarCalculator.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD621CC6EC3F00A9389E /* CompoundBarCalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundBarCalculatorTests.swift; path = Chart/CompoundBarCalculatorTests.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD641CC6EC3F00A9389E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Chart/Info.plist; sourceTree = SOURCE_ROOT; };
+		4FACDD651CC6EC3F00A9389E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Chart/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD721CC6EC5500A9389E /* CircleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleTests.swift; path = ChartTests/CircleTests.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD731CC6EC5500A9389E /* CompoundBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundBarTests.swift; path = ChartTests/CompoundBarTests.swift; sourceTree = SOURCE_ROOT; };
+		4FACDD741CC6EC5500A9389E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChartTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		4FBE40FF1CC535EC0056DFE3 /* CompoundBarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompoundBarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FBE41021CC535EC0056DFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4FBE41041CC535EC0056DFE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4FBE41071CC535EC0056DFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4FBE41091CC535EC0056DFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4FBE410C1CC535EC0056DFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4FBE410E1CC535EC0056DFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FBE41131CC535EC0056DFE3 /* CompoundBarChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompoundBarChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FBE41171CC535EC0056DFE3 /* CompoundBarChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundBarChartTests.swift; sourceTree = "<group>"; };
-		4FBE41191CC535EC0056DFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FBE41221CC536050056DFE3 /* CompoundBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundBarChartView.swift; sourceTree = "<group>"; };
-		4FBE41241CC5364E0056DFE3 /* CompoundBarChartCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundBarChartCalculator.swift; sourceTree = "<group>"; };
-		4FBE41251CC5364E0056DFE3 /* CompoundBarChartCalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundBarChartCalculatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FACDD591CC6EC3F00A9389E /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */,
+				4FACDD5C1CC6EC3F00A9389E /* Main.storyboard */,
+			);
+			name = Base.lproj;
+			path = Chart/Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
 		4FBE40F61CC535EC0056DFE3 = {
 			isa = PBXGroup;
 			children = (
@@ -83,15 +99,16 @@
 		4FBE41011CC535EC0056DFE3 /* CompoundBarChart */ = {
 			isa = PBXGroup;
 			children = (
-				4FBE41021CC535EC0056DFE3 /* AppDelegate.swift */,
-				4FBE41091CC535EC0056DFE3 /* Assets.xcassets */,
-				4FBE41241CC5364E0056DFE3 /* CompoundBarChartCalculator.swift */,
-				4FBE41251CC5364E0056DFE3 /* CompoundBarChartCalculatorTests.swift */,
-				4FBE41221CC536050056DFE3 /* CompoundBarChartView.swift */,
-				4FBE410E1CC535EC0056DFE3 /* Info.plist */,
-				4FBE410B1CC535EC0056DFE3 /* LaunchScreen.storyboard */,
-				4FBE41061CC535EC0056DFE3 /* Main.storyboard */,
-				4FBE41041CC535EC0056DFE3 /* ViewController.swift */,
+				4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */,
+				4FACDD581CC6EC3F00A9389E /* Assets.xcassets */,
+				4FACDD591CC6EC3F00A9389E /* Base.lproj */,
+				4FACDD5E1CC6EC3F00A9389E /* Circle.swift */,
+				4FACDD5F1CC6EC3F00A9389E /* CircleCalculator.swift */,
+				4FACDD601CC6EC3F00A9389E /* CompoundBar.swift */,
+				4FACDD611CC6EC3F00A9389E /* CompoundBarCalculator.swift */,
+				4FACDD621CC6EC3F00A9389E /* CompoundBarCalculatorTests.swift */,
+				4FACDD641CC6EC3F00A9389E /* Info.plist */,
+				4FACDD651CC6EC3F00A9389E /* ViewController.swift */,
 			);
 			path = CompoundBarChart;
 			sourceTree = "<group>";
@@ -99,8 +116,9 @@
 		4FBE41161CC535EC0056DFE3 /* CompoundBarChartTests */ = {
 			isa = PBXGroup;
 			children = (
-				4FBE41171CC535EC0056DFE3 /* CompoundBarChartTests.swift */,
-				4FBE41191CC535EC0056DFE3 /* Info.plist */,
+				4FACDD721CC6EC5500A9389E /* CircleTests.swift */,
+				4FACDD731CC6EC5500A9389E /* CompoundBarTests.swift */,
+				4FACDD741CC6EC5500A9389E /* Info.plist */,
 			);
 			path = CompoundBarChartTests;
 			sourceTree = "<group>";
@@ -162,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4FBE40FA1CC535EC0056DFE3 /* Build configuration list for PBXProject "CompoundBarChart" */;
+			buildConfigurationList = 4FBE40FA1CC535EC0056DFE3 /* Build configuration list for PBXProject "Chart" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -186,9 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FBE410D1CC535EC0056DFE3 /* LaunchScreen.storyboard in Resources */,
-				4FBE410A1CC535EC0056DFE3 /* Assets.xcassets in Resources */,
-				4FBE41081CC535EC0056DFE3 /* Main.storyboard in Resources */,
+				4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */,
+				4FACDD7E1CC6EDBF00A9389E /* LaunchScreen.storyboard in Resources */,
+				4FACDD7D1CC6EDB900A9389E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FACDD781CC6EC5B00A9389E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,10 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FBE41051CC535EC0056DFE3 /* ViewController.swift in Sources */,
-				4FBE41231CC536050056DFE3 /* CompoundBarChartView.swift in Sources */,
-				4FBE41261CC5364E0056DFE3 /* CompoundBarChartCalculator.swift in Sources */,
-				4FBE41031CC535EC0056DFE3 /* AppDelegate.swift in Sources */,
+				4FACDD6B1CC6EC3F00A9389E /* CircleCalculator.swift in Sources */,
+				4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */,
+				4FACDD711CC6EC3F00A9389E /* ViewController.swift in Sources */,
+				4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */,
+				4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */,
+				4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FBE41181CC535EC0056DFE3 /* CompoundBarChartTests.swift in Sources */,
-				4FBE41281CC5374C0056DFE3 /* CompoundBarChartCalculatorTests.swift in Sources */,
+				4FACDD791CC6EC5E00A9389E /* CompoundBarTests.swift in Sources */,
+				4FACDD7A1CC6EC6200A9389E /* CircleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,20 +254,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4FBE41061CC535EC0056DFE3 /* Main.storyboard */ = {
+		4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4FBE41071CC535EC0056DFE3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4FBE410B1CC535EC0056DFE3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FBE410C1CC535EC0056DFE3 /* Base */,
+				4FACDD5B1CC6EC3F00A9389E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4FACDD5C1CC6EC3F00A9389E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FACDD5D1CC6EC3F00A9389E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,7 +362,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CompoundBarChart/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = "$(SRCROOT)/Chart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,7 +374,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CompoundBarChart/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = "$(SRCROOT)/Chart/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -386,7 +409,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4FBE40FA1CC535EC0056DFE3 /* Build configuration list for PBXProject "CompoundBarChart" */ = {
+		4FBE40FA1CC535EC0056DFE3 /* Build configuration list for PBXProject "Chart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FBE411A1CC535EC0056DFE3 /* Debug */,

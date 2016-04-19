@@ -1,6 +1,6 @@
 //
-//  CompoundBarChartCalculatorTests.swift
-//  CompoundBarChart
+//  CompoundBarCalculatorTests.swift
+//  Chart
 //
 //  Created by Daher Alfawares on 4/18/16.
 //  Copyright © 2016 Daher Alfawares. All rights reserved.

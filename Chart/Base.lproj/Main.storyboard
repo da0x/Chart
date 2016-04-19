@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfJ-D6-751" customClass="CompoundBarChartView" customModule="CompoundBarChart" customModuleProvider="target">
-                                <rect key="frame" x="163" y="113" width="46" height="263"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfJ-D6-751" customClass="CompoundBar" customModule="CompoundBarChart" customModuleProvider="target">
+                                <rect key="frame" x="55" y="113" width="46" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="v2">
@@ -58,8 +58,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-hn-1q4" customClass="CompoundBarChartView" customModule="CompoundBarChart" customModuleProvider="target">
-                                <rect key="frame" x="231" y="113" width="45" height="263"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-hn-1q4" customClass="CompoundBar" customModule="CompoundBarChart" customModuleProvider="target">
+                                <rect key="frame" x="123" y="113" width="45" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="v2">
@@ -76,12 +76,34 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-Qu-fec" customClass="Circle" customModule="CompoundBarChart" customModuleProvider="target">
+                                <rect key="frame" x="205" y="113" width="125" height="128"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgQ-tq-oEs" customClass="Circle" customModule="CompoundBarChart" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="21" width="61" height="85"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="arcWidth">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arcWidth">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="bar1" destination="gfJ-D6-751" id="w4C-EQ-Gzb"/>
                         <outlet property="bar2" destination="Y8h-hn-1q4" id="Dlk-mu-vPG"/>
+                        <outlet property="circle1" destination="OgQ-tq-oEs" id="afz-zm-rVY"/>
+                        <outlet property="circle2" destination="ukb-Qu-fec" id="Vdg-c7-nfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
                BuildableName = "CompoundBarChart.app"
                BlueprintName = "CompoundBarChart"
-               ReferencedContainer = "container:CompoundBarChart.xcodeproj">
+               ReferencedContainer = "container:Chart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "4FBE41121CC535EC0056DFE3"
                BuildableName = "CompoundBarChartTests.xctest"
                BlueprintName = "CompoundBarChartTests"
-               ReferencedContainer = "container:CompoundBarChart.xcodeproj">
+               ReferencedContainer = "container:Chart.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
             BuildableName = "CompoundBarChart.app"
             BlueprintName = "CompoundBarChart"
-            ReferencedContainer = "container:CompoundBarChart.xcodeproj">
+            ReferencedContainer = "container:Chart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,7 +68,7 @@
             BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
             BuildableName = "CompoundBarChart.app"
             BlueprintName = "CompoundBarChart"
-            ReferencedContainer = "container:CompoundBarChart.xcodeproj">
+            ReferencedContainer = "container:Chart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -87,7 +87,7 @@
             BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
             BuildableName = "CompoundBarChart.app"
             BlueprintName = "CompoundBarChart"
-            ReferencedContainer = "container:CompoundBarChart.xcodeproj">
+            ReferencedContainer = "container:Chart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

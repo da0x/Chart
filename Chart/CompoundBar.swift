@@ -1,6 +1,6 @@
 //
-//  CompoundBarChartView.swift
-//  CompoundBarChart
+//  CompoundBar.swift
+//  Chart
 //
 //  Created by Daher Alfawares on 4/18/16.
 //  Copyright © 2016 Daher Alfawares. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-@IBDesignable class CompoundBarChartView : UIView {
+@IBDesignable class CompoundBar : UIView {
     
     @IBInspectable var v1 : CGFloat = CGFloat(100)
     @IBInspectable var C1 : UIColor = UIColor.blueColor()
@@ -74,7 +74,7 @@ import UIKit
                 current?.append(0)
             }
             
-            displayLink = CADisplayLink(target: self, selector: #selector(CompoundBarChartView.animate))
+            displayLink = CADisplayLink(target: self, selector: #selector(CompoundBar.animate))
             displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
             startTime = 0
         } else {
