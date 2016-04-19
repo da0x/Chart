@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfJ-D6-751" customClass="CompoundBarChartView" customModule="CompoundBarChart" customModuleProvider="target">
-                                <rect key="frame" x="68" y="140" width="33" height="144"/>
+                                <rect key="frame" x="163" y="113" width="46" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="v2">
@@ -32,36 +32,57 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eiL-S2-nIU" customClass="CompoundBarChartView" customModule="CompoundBarChart" customModuleProvider="target">
-                                <rect key="frame" x="127" y="52" width="35" height="232"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4YX-p3-hg8">
+                                <rect key="frame" x="176" y="414" width="90" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-wM-rzs">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="b1"/>
+                                        <connections>
+                                            <action selector="b1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rB4-KD-YL7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4My-Iv-BPO">
+                                        <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="b2"/>
+                                        <connections>
+                                            <action selector="b2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brL-TU-U9q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cz-Ow-k8a">
+                                        <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="b3"/>
+                                        <connections>
+                                            <action selector="b3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CKw-4I-4oG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-hn-1q4" customClass="CompoundBarChartView" customModule="CompoundBarChart" customModuleProvider="target">
+                                <rect key="frame" x="231" y="113" width="45" height="263"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="v1">
-                                        <real key="value" value="31"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="C1">
-                                        <color key="value" red="0.23855512700000001" green="0.01217514816" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="v2">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="v5">
+                                        <real key="value" value="29"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="C2">
                                         <color key="value" red="0.46424453409999999" green="0.68401287550000001" blue="0.41758264740000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="v3">
-                                        <real key="value" value="63"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="v4">
-                                        <real key="value" value="339"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="v5">
-                                        <real key="value" value="52"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="C4">
+                                        <color key="value" red="1" green="0.054508132049999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bar1" destination="gfJ-D6-751" id="w4C-EQ-Gzb"/>
+                        <outlet property="bar2" destination="Y8h-hn-1q4" id="Dlk-mu-vPG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

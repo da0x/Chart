@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CompoundBarChart/CompoundBarChartCalculator.swift"
-            timestampString = "482711806.788678"
+            timestampString = "482774674.647758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "bars()"
             landmarkType = "5">
          </BreakpointContent>

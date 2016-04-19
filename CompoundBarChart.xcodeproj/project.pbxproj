@@ -402,6 +402,7 @@
 				4FBE411E1CC535EC0056DFE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "CompoundBarChartTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +411,7 @@
 				4FBE41211CC535EC0056DFE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

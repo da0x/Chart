@@ -21,20 +21,18 @@ import UIKit
     @IBInspectable var C4 : UIColor = UIColor.grayColor()
     @IBInspectable var v5 : CGFloat  = CGFloat(100)
     @IBInspectable var C5 : UIColor = UIColor.magentaColor()
+    @IBInspectable var seperator = CGFloat(2)
     
-    @IBInspectable var seperator = CGFloat(4)
     
     override func drawRect(rect: CGRect) {
          super.drawRect(rect)
+        
+        if (current == nil) {
+            current = [Double(v1),Double(v2),Double(v3),Double(v4),Double(v5)]
+        }
     
         let calculator = CompoundBarChartCalculator(
-            Values: [
-                Double(v1),
-                Double(v2),
-                Double(v3),
-                Double(v4),
-                Double(v5)
-            ],
+            Values: current!,
             Height: Double(rect.size.height),
             Seperator: Double(seperator)
             )
@@ -52,9 +50,66 @@ import UIKit
             path.addLineToPoint(CGPoint(x: x1,       y: bar.end))
             path.addLineToPoint(CGPoint(x: x0,       y: bar.end))
             
-            colors[index].setFill()
+            colors[index%colors.count].setFill()
             path.fill()
         }
         
+    }
+    
+    
+    // Animations
+    private var current : [Double]?
+    private var target  : [Double]?
+    private var displayLink : CADisplayLink!
+    private var original    : [Double]?
+    private var startTime   : NSTimeInterval = 0
+    private var duration    : NSTimeInterval = 2
+    
+    func setValues(values:[Double], animated:Bool){
+        if animated, let _ = current {
+            original = current!
+            target   = values
+            
+            while current?.count < target?.count {
+                current?.append(0)
+            }
+            
+            displayLink = CADisplayLink(target: self, selector: #selector(CompoundBarChartView.animate))
+            displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+            startTime = 0
+        } else {
+            current = values
+        }
+        setNeedsDisplay()
+    }
+    
+    func animate(){
+        guard startTime > 0 else {
+            startTime = displayLink.timestamp
+            return
+        }
+        
+        let t1 = self.startTime
+        let t2 = displayLink.timestamp
+        let dt = t2 - t1
+        
+        if dt > duration {
+            displayLink?.invalidate()
+            return
+        }
+        
+        let r = Double( dt / duration )
+        var c = [Double]()
+        
+        for (i,_) in target!.enumerate() {
+            let Ci = current?[i] ?? 0
+            let Ti = target![i]
+            
+            let Vi = Ci + r * ( Ti - Ci )
+            c.append(Vi)
+        }
+        
+        current = c
+        setNeedsDisplay()
     }
 }
