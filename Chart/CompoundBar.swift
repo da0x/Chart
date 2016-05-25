@@ -22,21 +22,21 @@ import UIKit
     @IBInspectable var v5 : CGFloat  = CGFloat(100)
     @IBInspectable var C5 : UIColor = UIColor.magentaColor()
     @IBInspectable var seperator = CGFloat(2)
-    
-    
+
+
     override func drawRect(rect: CGRect) {
          super.drawRect(rect)
-        
+
         if (current == nil) {
             current = [Double(v1),Double(v2),Double(v3),Double(v4),Double(v5)]
         }
-    
+
         let calculator = CompoundBarChartCalculator(
             Values: current!,
             Height: Double(rect.size.height),
             Seperator: Double(seperator)
             )
-        
+
         let colors = [C1,C2,C3,C4,C5]
         
         let x0 = Double(0)
@@ -113,3 +113,4 @@ import UIKit
         setNeedsDisplay()
     }
 }
+

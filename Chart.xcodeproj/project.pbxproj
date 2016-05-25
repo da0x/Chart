@@ -19,6 +19,7 @@
 		4FACDD7A1CC6EC6200A9389E /* CircleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD721CC6EC5500A9389E /* CircleTests.swift */; };
 		4FACDD7D1CC6EDB900A9389E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5C1CC6EC3F00A9389E /* Main.storyboard */; };
 		4FACDD7E1CC6EDBF00A9389E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */; };
+		4FCF01901CE101A100E95189 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF018F1CE101A100E95189 /* Area.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,9 @@
 		4FACDD721CC6EC5500A9389E /* CircleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleTests.swift; path = ChartTests/CircleTests.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD731CC6EC5500A9389E /* CompoundBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundBarTests.swift; path = ChartTests/CompoundBarTests.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD741CC6EC5500A9389E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChartTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		4FBE40FF1CC535EC0056DFE3 /* CompoundBarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompoundBarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FBE41131CC535EC0056DFE3 /* CompoundBarChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompoundBarChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FBE40FF1CC535EC0056DFE3 /* Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FBE41131CC535EC0056DFE3 /* ChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCF018F1CE101A100E95189 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Area.swift; path = Chart/Area.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +92,8 @@
 		4FBE41001CC535EC0056DFE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FBE40FF1CC535EC0056DFE3 /* CompoundBarChart.app */,
-				4FBE41131CC535EC0056DFE3 /* CompoundBarChartTests.xctest */,
+				4FBE40FF1CC535EC0056DFE3 /* Chart.app */,
+				4FBE41131CC535EC0056DFE3 /* ChartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +106,7 @@
 				4FACDD591CC6EC3F00A9389E /* Base.lproj */,
 				4FACDD5E1CC6EC3F00A9389E /* Circle.swift */,
 				4FACDD5F1CC6EC3F00A9389E /* CircleCalculator.swift */,
+				4FCF018F1CE101A100E95189 /* Area.swift */,
 				4FACDD601CC6EC3F00A9389E /* CompoundBar.swift */,
 				4FACDD611CC6EC3F00A9389E /* CompoundBarCalculator.swift */,
 				4FACDD621CC6EC3F00A9389E /* CompoundBarCalculatorTests.swift */,
@@ -126,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4FBE40FE1CC535EC0056DFE3 /* CompoundBarChart */ = {
+		4FBE40FE1CC535EC0056DFE3 /* Chart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FBE411C1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "CompoundBarChart" */;
+			buildConfigurationList = 4FBE411C1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "Chart" */;
 			buildPhases = (
 				4FBE40FB1CC535EC0056DFE3 /* Sources */,
 				4FBE40FC1CC535EC0056DFE3 /* Frameworks */,
@@ -138,14 +141,14 @@
 			);
 			dependencies = (
 			);
-			name = CompoundBarChart;
+			name = Chart;
 			productName = CompoundBarChart;
-			productReference = 4FBE40FF1CC535EC0056DFE3 /* CompoundBarChart.app */;
+			productReference = 4FBE40FF1CC535EC0056DFE3 /* Chart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4FBE41121CC535EC0056DFE3 /* CompoundBarChartTests */ = {
+		4FBE41121CC535EC0056DFE3 /* ChartTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "CompoundBarChartTests" */;
+			buildConfigurationList = 4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "ChartTests" */;
 			buildPhases = (
 				4FBE410F1CC535EC0056DFE3 /* Sources */,
 				4FBE41101CC535EC0056DFE3 /* Frameworks */,
@@ -156,9 +159,9 @@
 			dependencies = (
 				4FBE41151CC535EC0056DFE3 /* PBXTargetDependency */,
 			);
-			name = CompoundBarChartTests;
+			name = ChartTests;
 			productName = CompoundBarChartTests;
-			productReference = 4FBE41131CC535EC0056DFE3 /* CompoundBarChartTests.xctest */;
+			productReference = 4FBE41131CC535EC0056DFE3 /* ChartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -193,8 +196,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4FBE40FE1CC535EC0056DFE3 /* CompoundBarChart */,
-				4FBE41121CC535EC0056DFE3 /* CompoundBarChartTests */,
+				4FBE40FE1CC535EC0056DFE3 /* Chart */,
+				4FBE41121CC535EC0056DFE3 /* ChartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,6 +231,7 @@
 				4FACDD6B1CC6EC3F00A9389E /* CircleCalculator.swift in Sources */,
 				4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */,
 				4FACDD711CC6EC3F00A9389E /* ViewController.swift in Sources */,
+				4FCF01901CE101A100E95189 /* Area.swift in Sources */,
 				4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */,
 				4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */,
 				4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */,
@@ -248,7 +252,7 @@
 /* Begin PBXTargetDependency section */
 		4FBE41151CC535EC0056DFE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4FBE40FE1CC535EC0056DFE3 /* CompoundBarChart */;
+			target = 4FBE40FE1CC535EC0056DFE3 /* Chart */;
 			targetProxy = 4FBE41141CC535EC0056DFE3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -418,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FBE411C1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "CompoundBarChart" */ = {
+		4FBE411C1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "Chart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FBE411D1CC535EC0056DFE3 /* Debug */,
@@ -427,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "CompoundBarChartTests" */ = {
+		4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "ChartTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FBE41201CC535EC0056DFE3 /* Debug */,

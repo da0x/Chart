@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
-               BuildableName = "CompoundBarChart.app"
-               BlueprintName = "CompoundBarChart"
+               BuildableName = "Chart.app"
+               BlueprintName = "Chart"
                ReferencedContainer = "container:Chart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4FBE41121CC535EC0056DFE3"
-               BuildableName = "CompoundBarChartTests.xctest"
-               BlueprintName = "CompoundBarChartTests"
+               BuildableName = "ChartTests.xctest"
+               BlueprintName = "ChartTests"
                ReferencedContainer = "container:Chart.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
-            BuildableName = "CompoundBarChart.app"
-            BlueprintName = "CompoundBarChart"
+            BuildableName = "Chart.app"
+            BlueprintName = "Chart"
             ReferencedContainer = "container:Chart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
-            BuildableName = "CompoundBarChart.app"
-            BlueprintName = "CompoundBarChart"
+            BuildableName = "Chart.app"
+            BlueprintName = "Chart"
             ReferencedContainer = "container:Chart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4FBE40FE1CC535EC0056DFE3"
-            BuildableName = "CompoundBarChart.app"
-            BlueprintName = "CompoundBarChart"
+            BuildableName = "Chart.app"
+            BlueprintName = "Chart"
             ReferencedContainer = "container:Chart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
