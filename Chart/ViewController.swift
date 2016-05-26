@@ -8,6 +8,45 @@
 
 import UIKit
 
+class Color {
+    
+    internal class func tag(tag: UInt32) -> UIColor {
+        typealias F = CGFloat
+        let r = (tag & 0xFF0000) >> 16
+        let g = (tag & 0x00FF00) >> 8
+        let b = (tag & 0x0000FF)
+        let c = F(255.0)
+       return UIColor(red:F(r)/c,green:F(g)/c,blue:F(b)/c,alpha:1.0)
+    }
+    
+    // Palette Style
+    class func brand           ()->UIColor { return Color.tag( 0x115740 ) }
+    class func action          ()->UIColor { return Color.tag( 0x3a913f ) }
+    class func alert           ()->UIColor { return Color.tag( 0xe57200 ) }
+    class func secondaryAction ()->UIColor { return Color.tag( 0x005082 ) }
+    class func bodyText        ()->UIColor { return Color.tag( 0x444444 ) }
+    class func secondaryText   ()->UIColor { return Color.tag( 0x828282 ) }
+    class func accent          ()->UIColor { return Color.tag( 0xcfcfcf ) }
+    class func background      ()->UIColor { return Color.tag( 0xf2f0ed ) }
+    class func highlight       ()->UIColor { return Color.tag( 0xf1c400 ) }
+    class func data            ()->UIColor { return Color.tag( 0x6bcaba ) }
+    
+    
+    // associations:
+    class func riskControl     ()->UIColor { return Color.tag( 0x8eb1c7 )   }
+    class func capitalAsset    ()->UIColor { return Color.tag( 0x64a541 )   }
+    class func portfolio       ()->UIColor { return Color.tag( 0xe2e2e2 )   }
+    class func annuities       ()->UIColor { return Color.tag( 0x5a2864 )   }
+    class func other           ()->UIColor { return Color.tag( 0xaa2d28 )   }
+    class func trustIncome     ()->UIColor { return Color.tag( 0xd2aad2 )   }
+    class func annuitiesColor  ()->UIColor { return Color.tag( 0x5a2864 )   }
+    class func inflows         ()->UIColor { return Color.action()          }
+    class func socialSecurity  ()->UIColor { return Color.secondaryAction() }
+    class func pension         ()->UIColor { return Color.data()            }
+    class func contingent      ()->UIColor { return Color.background()      }
+    class func portfolioReserve()->UIColor { return Color.background()      }
+}
+
 class Sample {
     let period : [Double] = [40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80]
     
@@ -40,15 +79,15 @@ class ViewController: UIViewController {
         
         area.model = Area.Model(
             Back: [
-                Area.Element( Values: Sample().lifestyleSpending, Color: UIColor.grayColor())
+                Area.Element( Values: Sample().lifestyleSpending, Color: Color.portfolio())
             ],
             
             Rows: [
-                Area.Element( Values: Sample().pension, Color: UIColor.blueColor()),
-                Area.Element( Values: Sample().socialSecurity, Color: UIColor.greenColor()),
-                Area.Element( Values: Sample().portfolioSpending, Color: UIColor.orangeColor()),
-                Area.Element( Values: Sample().socialSecurity_Real, Color: UIColor.purpleColor()),
-                Area.Element( Values: Sample().portfolioReserve, Color: UIColor.cyanColor()),
+                Area.Element( Values: Sample().socialSecurity_Real, Color: Color.socialSecurity()),
+                Area.Element( Values: Sample().pension,             Color: Color.pension()),
+                Area.Element( Values: Sample().socialSecurity,      Color: Color.action()),
+                Area.Element( Values: Sample().portfolioReserve,    Color: Color.portfolioReserve()),
+                //    Area.Element( Values: Sample().portfolioSpending,   Color: Color.riskControl()),
             ]
         )
     }
@@ -59,22 +98,14 @@ class ViewController: UIViewController {
     }
     
     let animate = true
-    
-//    
-//    let v1 : [Double] = [99, 1]
-//    let v2 : [Double] = [80, 1000]
-//    let v3 : [Double] = [50, 40]
-//    let t1 : [Double] = [20, 40]
-//    let t2 : [Double] = [20, 100]
-//    let t3 : [Double] = [0, 100]
-//    
-    let v1 : [Double] = [20, 40,  100, 56,  90,  20,  30 ]
-    let v2 : [Double] = [80, 1000,10,  0,   30,  400, 50 ]
-    let v3 : [Double] = [10, 40,  10,  300, 200, 100, 300]
-    let t1 : [Double] = [20, 40,  180, 156, 90,  20,  30 ]
-    let t2 : [Double] = [20, 100,10,  0,   30,  40, 50 ]
-    let t3 : [Double] = [40, 80,  152,  30, 20, 100, 300]
-    
+      
+    let v1 : [Double] = [ 20, 40,  100,  56,  90,  20,  30 ]
+    let v2 : [Double] = [ 80, 1000, 10,   0,  30, 400,  50 ]
+    let v3 : [Double] = [ 10, 40,   10, 300, 200, 100, 300 ]
+    let t1 : [Double] = [ 20, 40,  180, 156,  90,  20,  30 ]
+    let t2 : [Double] = [ 20, 100,  10,   0,  30,  40,  50 ]
+    let t3 : [Double] = [ 40, 80,  152,  30,  20, 100, 300 ]
+
     @IBAction func b1(sender: AnyObject) {
         bar1.setValues(v1, animated: animate)
         bar2.setValues(t1, animated: animate)

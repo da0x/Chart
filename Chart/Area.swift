@@ -12,7 +12,7 @@ import UIKit
     
     // area view model
     class Model {
-        let rows : [Element]
+        var rows : [Element]
         let back : [Element]
         
         init( Back : [Element], Rows : [Element] ){
@@ -29,11 +29,21 @@ import UIKit
             values = Values
             color  = Color
         }
+        
+        func width() -> Int {
+            var w = 0
+            for value in values {
+                if value > 0 {
+                    w += 1
+                }
+            }
+            return w
+        }
     }
     
     class Calculator {
         
-        class Graph {
+        internal class Graph {
             internal var norms  : [Double] = []
             internal var color  : UIColor
             
@@ -47,14 +57,19 @@ import UIKit
         var rows     : [Graph] = []
         
         init(model : Model){
-            blad()
+            //
+            // sort
+            //
+            model.rows.sortInPlace { (v0:Area.Element,v1:Area.Element) -> Bool in
+                
+                v0.width() > v1.width()
+            }
             
-            create the maximum based on the incremental values.
+            //create the maximum based on the incremental values.
             
             var maximum : Double = 0
-            var values  = [Double]()
             
-            // loop over paths
+            // loop over back paths. The graph is capped at the back.
             for element in model.back {
                 
                 // each value
@@ -66,26 +81,16 @@ import UIKit
                     }
                 }
             }
-            for element in model.rows {
-                
-                // each value
-                for (_,value) in element.values.enumerate() {
-                    
-                    // maximum
-                    if maximum < value {
-                        maximum = value
-                    }
-                }
-            }
             
-            // reduce above
+            
+            //...
             
             
             var norms : [Double] = []
             
             for element in model.rows {
                 // each value
-                
+                var elementNorms :[Double] = []
                 for (i,value) in element.values.enumerate() {
                     
                     // safe-range
@@ -94,9 +99,22 @@ import UIKit
                     // set value
                     norms[i] = norms[i] + value/maximum
                     
+                    if( value > 0 ){
+                        elementNorms.append(norms[i])
+                    } else {
+                        elementNorms.append(0)
+                    }
                 }
-                
-                rows.append(Graph(Norms: norms, Color: element.color))
+
+                rows.append(Graph(Norms: elementNorms, Color: element.color))
+            }
+            
+            for backElement in model.back {
+                var normsForBack : [Double] = []
+                for value in backElement.values {
+                    normsForBack.append(value/maximum)
+                }
+                backRows.append(Graph(Norms: normsForBack, Color: backElement.color))
             }
         }
     }
