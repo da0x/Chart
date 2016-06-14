@@ -50,7 +50,8 @@ class Color {
 class Sample {
     let period : [Double] = [40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80]
     
-    let lifestyleSpending : [Double] = [500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000]
+    let lifestyleSpending1 : [Double] = [500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,500000,0,0,0,0,0,0,0,0,0]
+    let lifestyleSpending2 : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,600000,600000,600000,600000,600000,600000,600000,600000,600000]
     
     let socialSecurity : [Double] = [400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,400000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
@@ -79,15 +80,14 @@ class ViewController: UIViewController {
         
         area.model = Area.Model(
             Back: [
-                Area.Element( Values: Sample().lifestyleSpending, Color: Color.portfolio())
+                Area.Element( Values: Sample().lifestyleSpending1, Color: Color.portfolio()),
+                Area.Element( Values: Sample().lifestyleSpending2, Color: Color.portfolio())
             ],
             
             Rows: [
                 Area.Element( Values: Sample().socialSecurity_Real, Color: Color.socialSecurity()),
                 Area.Element( Values: Sample().pension,             Color: Color.pension()),
                 Area.Element( Values: Sample().socialSecurity,      Color: Color.action()),
-                Area.Element( Values: Sample().portfolioReserve,    Color: Color.portfolioReserve()),
-                //    Area.Element( Values: Sample().portfolioSpending,   Color: Color.riskControl()),
             ]
         )
     }
