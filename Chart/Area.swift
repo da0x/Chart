@@ -60,7 +60,7 @@ import UIKit
             //
             // sort
             //
-            model.rows.sortInPlace { (v0:Area.Element,v1:Area.Element) -> Bool in
+            model.rows.sort { (v0:Area.Element,v1:Area.Element) -> Bool in
                 
                 v0.width() > v1.width()
             }
@@ -73,7 +73,7 @@ import UIKit
             for element in model.back {
                 
                 // each value
-                for (_,value) in element.values.enumerate() {
+                for (_,value) in element.values.enumerated() {
                     
                     // maximum
                     if maximum < value {
@@ -91,7 +91,7 @@ import UIKit
             for element in model.rows {
                 // each value
                 var elementNorms :[Double] = []
-                for (i,value) in element.values.enumerate() {
+                for (i,value) in element.values.enumerated() {
                     
                     // safe-range
                     if( norms.count <= i ){ norms.append(0) }
@@ -121,7 +121,7 @@ import UIKit
     
     var model : Model = Model(Back: [], Rows: [])
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         let calculator = Calculator(model: model)
         
@@ -130,13 +130,13 @@ import UIKit
         }
         
             // loop over paths in reverse and render
-        for graph in calculator.rows.reverse() {
+        for graph in calculator.rows.reversed() {
             
             drawGraphInRect(rect,graph: graph)
         }
     }
     
-    func drawGraphInRect(rect:CGRect,graph:Calculator.Graph){
+    func drawGraphInRect(_ rect:CGRect,graph:Calculator.Graph){
         
         let width  = Double(rect.size.width )
         let height = Double(rect.size.height)
@@ -145,9 +145,9 @@ import UIKit
         let path = UIBezierPath()
         
         // reset path position
-        path.moveToPoint(CGPoint(x: 0, y: Double(rect.size.height)))
+        path.move(to: CGPoint(x: 0, y: Double(rect.size.height)))
         
-        for (i,value) in graph.norms.enumerate() {
+        for (i,value) in graph.norms.enumerated() {
 
             let x = width  * Double(i) / Double(graph.norms.count-1)
             let y = height - Double(rect.size.height) * value
@@ -163,15 +163,15 @@ import UIKit
                 if diff > threshold {
                     let y0 = height - height * previousValue
                     
-                    path.addLineToPoint(CGPoint(x:x,y:y0))
+                    path.addLine(to: CGPoint(x:x,y:y0))
                 }
             }
             
-            path.addLineToPoint(CGPoint(x:x,y:y))
+            path.addLine(to: CGPoint(x:x,y:y))
         }
         
-        path.addLineToPoint(CGPoint(x: rect.size.width, y: rect.size.height))
-        path.closePath()
+        path.addLine(to: CGPoint(x: rect.size.width, y: rect.size.height))
+        path.close()
         
         graph.color.setFill()
         path.fill()

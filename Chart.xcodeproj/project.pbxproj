@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FA663401D3D78520035C419 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6633F1D3D78520035C419 /* Line.swift */; };
 		4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */; };
 		4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD581CC6EC3F00A9389E /* Assets.xcassets */; };
 		4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD5E1CC6EC3F00A9389E /* Circle.swift */; };
@@ -14,25 +15,14 @@
 		4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD601CC6EC3F00A9389E /* CompoundBar.swift */; };
 		4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD611CC6EC3F00A9389E /* CompoundBarCalculator.swift */; };
 		4FACDD711CC6EC3F00A9389E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD651CC6EC3F00A9389E /* ViewController.swift */; };
-		4FACDD781CC6EC5B00A9389E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD741CC6EC5500A9389E /* Info.plist */; };
-		4FACDD791CC6EC5E00A9389E /* CompoundBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD731CC6EC5500A9389E /* CompoundBarTests.swift */; };
-		4FACDD7A1CC6EC6200A9389E /* CircleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD721CC6EC5500A9389E /* CircleTests.swift */; };
 		4FACDD7D1CC6EDB900A9389E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5C1CC6EC3F00A9389E /* Main.storyboard */; };
 		4FACDD7E1CC6EDBF00A9389E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */; };
+		4FC960531D3D80F1003F4D6E /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC960521D3D80F1003F4D6E /* LineData.swift */; };
 		4FCF01901CE101A100E95189 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF018F1CE101A100E95189 /* Area.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4FBE41141CC535EC0056DFE3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4FBE40F71CC535EC0056DFE3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FBE40FE1CC535EC0056DFE3;
-			remoteInfo = CompoundBarChart;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		4FA6633F1D3D78520035C419 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Chart/Line.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chart/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD581CC6EC3F00A9389E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chart/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		4FACDD5B1CC6EC3F00A9389E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,19 +38,12 @@
 		4FACDD731CC6EC5500A9389E /* CompoundBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundBarTests.swift; path = ChartTests/CompoundBarTests.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD741CC6EC5500A9389E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChartTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		4FBE40FF1CC535EC0056DFE3 /* Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FBE41131CC535EC0056DFE3 /* ChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC960521D3D80F1003F4D6E /* LineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineData.swift; path = Chart/LineData.swift; sourceTree = SOURCE_ROOT; };
 		4FCF018F1CE101A100E95189 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Area.swift; path = Chart/Area.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4FBE40FC1CC535EC0056DFE3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4FBE41101CC535EC0056DFE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				4FBE40FF1CC535EC0056DFE3 /* Chart.app */,
-				4FBE41131CC535EC0056DFE3 /* ChartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,15 +84,17 @@
 			isa = PBXGroup;
 			children = (
 				4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */,
+				4FCF018F1CE101A100E95189 /* Area.swift */,
 				4FACDD581CC6EC3F00A9389E /* Assets.xcassets */,
 				4FACDD591CC6EC3F00A9389E /* Base.lproj */,
 				4FACDD5E1CC6EC3F00A9389E /* Circle.swift */,
 				4FACDD5F1CC6EC3F00A9389E /* CircleCalculator.swift */,
-				4FCF018F1CE101A100E95189 /* Area.swift */,
 				4FACDD601CC6EC3F00A9389E /* CompoundBar.swift */,
 				4FACDD611CC6EC3F00A9389E /* CompoundBarCalculator.swift */,
 				4FACDD621CC6EC3F00A9389E /* CompoundBarCalculatorTests.swift */,
 				4FACDD641CC6EC3F00A9389E /* Info.plist */,
+				4FA6633F1D3D78520035C419 /* Line.swift */,
+				4FC960521D3D80F1003F4D6E /* LineData.swift */,
 				4FACDD651CC6EC3F00A9389E /* ViewController.swift */,
 			);
 			path = CompoundBarChart;
@@ -146,24 +130,6 @@
 			productReference = 4FBE40FF1CC535EC0056DFE3 /* Chart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4FBE41121CC535EC0056DFE3 /* ChartTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "ChartTests" */;
-			buildPhases = (
-				4FBE410F1CC535EC0056DFE3 /* Sources */,
-				4FBE41101CC535EC0056DFE3 /* Frameworks */,
-				4FBE41111CC535EC0056DFE3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4FBE41151CC535EC0056DFE3 /* PBXTargetDependency */,
-			);
-			name = ChartTests;
-			productName = CompoundBarChartTests;
-			productReference = 4FBE41131CC535EC0056DFE3 /* ChartTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -176,10 +142,9 @@
 				TargetAttributes = {
 					4FBE40FE1CC535EC0056DFE3 = {
 						CreatedOnToolsVersion = 7.3;
-					};
-					4FBE41121CC535EC0056DFE3 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 4FBE40FE1CC535EC0056DFE3;
+						DevelopmentTeam = NF856H64DK;
+						DevelopmentTeamName = "Daher Alfawares";
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -197,7 +162,6 @@
 			projectRoot = "";
 			targets = (
 				4FBE40FE1CC535EC0056DFE3 /* Chart */,
-				4FBE41121CC535EC0056DFE3 /* ChartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,14 +177,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FBE41111CC535EC0056DFE3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FACDD781CC6EC5B00A9389E /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -233,29 +189,14 @@
 				4FACDD711CC6EC3F00A9389E /* ViewController.swift in Sources */,
 				4FCF01901CE101A100E95189 /* Area.swift in Sources */,
 				4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */,
+				4FA663401D3D78520035C419 /* Line.swift in Sources */,
 				4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */,
 				4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4FBE410F1CC535EC0056DFE3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FACDD791CC6EC5E00A9389E /* CompoundBarTests.swift in Sources */,
-				4FACDD7A1CC6EC6200A9389E /* CircleTests.swift in Sources */,
+				4FC960531D3D80F1003F4D6E /* LineData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4FBE41151CC535EC0056DFE3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4FBE40FE1CC535EC0056DFE3 /* Chart */;
-			targetProxy = 4FBE41141CC535EC0056DFE3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */ = {
@@ -371,6 +312,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -383,30 +325,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		4FBE41201CC535EC0056DFE3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CompoundBarChartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChartTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CompoundBarChart.app/CompoundBarChart";
-			};
-			name = Debug;
-		};
-		4FBE41211CC535EC0056DFE3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CompoundBarChartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChartTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CompoundBarChart.app/CompoundBarChart";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -427,15 +346,6 @@
 			buildConfigurations = (
 				4FBE411D1CC535EC0056DFE3 /* Debug */,
 				4FBE411E1CC535EC0056DFE3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4FBE411F1CC535EC0056DFE3 /* Build configuration list for PBXNativeTarget "ChartTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4FBE41201CC535EC0056DFE3 /* Debug */,
-				4FBE41211CC535EC0056DFE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

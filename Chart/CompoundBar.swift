@@ -12,20 +12,20 @@ import UIKit
 @IBDesignable class CompoundBar : UIView {
     
     @IBInspectable var v1 : CGFloat = CGFloat(100)
-    @IBInspectable var C1 : UIColor = UIColor.blueColor()
+    @IBInspectable var C1 : UIColor = UIColor.blue()
     @IBInspectable var v2 : CGFloat  = CGFloat(100)
-    @IBInspectable var C2 : UIColor = UIColor.greenColor()
+    @IBInspectable var C2 : UIColor = UIColor.green()
     @IBInspectable var v3 : CGFloat  = CGFloat(100)
-    @IBInspectable var C3 : UIColor = UIColor.orangeColor()
+    @IBInspectable var C3 : UIColor = UIColor.orange()
     @IBInspectable var v4 : CGFloat  = CGFloat(100)
-    @IBInspectable var C4 : UIColor = UIColor.grayColor()
+    @IBInspectable var C4 : UIColor = UIColor.gray()
     @IBInspectable var v5 : CGFloat  = CGFloat(100)
-    @IBInspectable var C5 : UIColor = UIColor.magentaColor()
+    @IBInspectable var C5 : UIColor = UIColor.magenta()
     @IBInspectable var seperator = CGFloat(2)
 
 
-    override func drawRect(rect: CGRect) {
-         super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+         super.draw(rect)
 
         if (current == nil) {
             current = [Double(v1),Double(v2),Double(v3),Double(v4),Double(v5)]
@@ -42,13 +42,13 @@ import UIKit
         let x0 = Double(0)
         let x1 = Double(rect.size.width)
         
-        for (index,bar) in calculator.bars().enumerate() {
+        for (index,bar) in calculator.bars().enumerated() {
             let path = UIBezierPath()
             
-            path.moveToPoint(   CGPoint(x: x0,       y: bar.start))
-            path.addLineToPoint(CGPoint(x: x1,       y: bar.start))
-            path.addLineToPoint(CGPoint(x: x1,       y: bar.end))
-            path.addLineToPoint(CGPoint(x: x0,       y: bar.end))
+            path.move(   to: CGPoint(x: x0,       y: bar.start))
+            path.addLine(to: CGPoint(x: x1,       y: bar.start))
+            path.addLine(to: CGPoint(x: x1,       y: bar.end))
+            path.addLine(to: CGPoint(x: x0,       y: bar.end))
             
             colors[index%colors.count].setFill()
             path.fill()
@@ -62,10 +62,10 @@ import UIKit
     private var target  : [Double]?
     private var displayLink : CADisplayLink!
     private var original    : [Double]?
-    private var startTime   : NSTimeInterval = 0
-    private var duration    : NSTimeInterval = 2
+    private var startTime   : TimeInterval = 0
+    private var duration    : TimeInterval = 2
     
-    func setValues(values:[Double], animated:Bool){
+    func setValues(_ values:[Double], animated:Bool){
         if animated, let _ = current {
             original = current!
             target   = values
@@ -74,8 +74,8 @@ import UIKit
                 current?.append(0)
             }
             
-            displayLink = CADisplayLink(target: self, selector: #selector(CompoundBar.animate))
-            displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+            displayLink = CADisplayLink(target: self, selector: #selector(CompoundBar.animateMe))
+            displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
             startTime = 0
         } else {
             current = values
@@ -83,7 +83,7 @@ import UIKit
         setNeedsDisplay()
     }
     
-    func animate(){
+    func animateMe(){
         guard startTime > 0 else {
             startTime = displayLink.timestamp
             return
@@ -101,7 +101,7 @@ import UIKit
         let r = Double( dt / duration )
         var c = [Double]()
         
-        for (i,_) in target!.enumerate() {
+        for (i,_) in target!.enumerated() {
             let Ci = current?[i] ?? 0
             let Ti = target![i]
             

@@ -10,7 +10,7 @@ import UIKit
 
 class Color {
     
-    internal class func tag(tag: UInt32) -> UIColor {
+    internal class func tag(_ tag: UInt32) -> UIColor {
         typealias F = CGFloat
         let r = (tag & 0xFF0000) >> 16
         let g = (tag & 0x00FF00) >> 8
@@ -73,6 +73,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var circle1: Circle!
     @IBOutlet weak var circle2: Circle!
     
+    @IBOutlet weak var line: Line!
     @IBOutlet weak var area: Area!
     
     override func viewDidLoad() {
@@ -91,6 +92,12 @@ class ViewController: UIViewController {
             ]
         )
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.createPDFfromUIView(self.view, saveToDocumentsWithFileName: "test.pdf")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,22 +112,61 @@ class ViewController: UIViewController {
     let t1 : [Double] = [ 20, 40,  180, 156,  90,  20,  30 ]
     let t2 : [Double] = [ 20, 100,  10,   0,  30,  40,  50 ]
     let t3 : [Double] = [ 40, 80,  152,  30,  20, 100, 300 ]
+    let ld = LineData()
 
-    @IBAction func b1(sender: AnyObject) {
-        bar1.setValues(v1, animated: animate)
-        bar2.setValues(t1, animated: animate)
+    @IBAction func b1(_ sender: AnyObject) {
+        // bar1.setValues(v1, animated: animate)
+        //bar2.setValues(t1, animated: animate)
         
-        circle1.userData = v1
-        circle2.userData = t1
+        //circle1.userData = v1
+        //circle2.userData = t1
+        
+        line.setValues(ld.oneYear(), animated: animate)
     }
 
-    @IBAction func b2(sender: AnyObject) {
-        bar1.setValues(v2, animated: animate)
-        bar2.setValues(t2, animated: animate)
+    @IBAction func b2(_ sender: AnyObject) {
+        //   bar1.setValues(v2, animated: animate)
+        //bar2.setValues(t2, animated: animate)
+        
+        line.setValues(ld.threeYears(), animated: animate)
     }
-    @IBAction func b3(sender: AnyObject) {
-        bar1.setValues(v3, animated: animate)
-        bar2.setValues(t3, animated: animate)
+    @IBAction func b3(_ sender: AnyObject) {
+        //bar1.setValues(v3, animated: animate)
+        //bar2.setValues(t3, animated: animate)
+        
+        line.setValues(ld.fiveYears(), animated: animate)
     }
+    
+    
+    func createPDFfromUIView(_ aView:UIView,saveToDocumentsWithFileName aFilename:String)
+    {
+        let pdfData = NSMutableData()
+    // Creates a mutable data object for updating with binary data, like a byte array
+    
+    
+    // Points the pdf converter to the mutable data object and to the UIView to be converted
+    UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil);
+    UIGraphicsBeginPDFPage();
+    let pdfContext = UIGraphicsGetCurrentContext();
+    
+    // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
+    
+    aView.layer.draw(in: pdfContext!)
+        aView.drawHierarchy(in: aView.bounds, afterScreenUpdates: false)
+    
+    // remove PDF rendering context
+    UIGraphicsEndPDFContext();
+    
+    // Retrieves the document directories from the iOS device
+    let documentDirectories = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        
+    let documentDirectory = documentDirectories[0] as String
+    let documentDirectoryFilename = documentDirectory + "/test.pdf"
+    
+    // instructs the mutable data object to write its context to a file on disk
+    pdfData.write(toFile: documentDirectoryFilename, atomically:true)
+    print("documentDirectoryFileName: \(documentDirectoryFilename)")
+    }
+    
 }
 

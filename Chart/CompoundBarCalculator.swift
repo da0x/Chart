@@ -44,8 +44,8 @@ class CompoundBarChartCalculator {
             let bar = Bar()
 
             let Vi = v
-            let Ni = Vi / Sum
-            let Li = Ni * ( H - ( S * ( C - 1 ) ) )
+            let Ni = Vi / Sum!
+            let Li = Ni * ( H! - ( S! * ( C - 1 ) ) )
 
             bar.start = accumilation
             bar.end   = accumilation + Li
@@ -58,7 +58,7 @@ class CompoundBarChartCalculator {
         return bars
     }
 
-    func sum(values:[Double]) -> Double {
+    func sum(_ values:[Double]) -> Double {
         var T = Double(0)
         for value in values {
             T += value

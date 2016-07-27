@@ -19,7 +19,7 @@ import UIKit
         }
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let data   = getData()
         let colors = getColors()
         
@@ -83,12 +83,12 @@ import UIKit
     @IBInspectable var startAngle   : CGFloat = 0
     @IBInspectable var spaceAngle   : CGFloat = 2
     
-    @IBInspectable var color_1      : UIColor = UIColor.redColor()
-    @IBInspectable var color_2      : UIColor = UIColor.greenColor()
-    @IBInspectable var color_3      : UIColor = UIColor.blueColor()
-    @IBInspectable var color_4      : UIColor = UIColor.purpleColor()
-    @IBInspectable var color_5      : UIColor = UIColor.cyanColor()
-    @IBInspectable var color_6      : UIColor = UIColor.orangeColor()
+    @IBInspectable var color_1      : UIColor = UIColor.red()
+    @IBInspectable var color_2      : UIColor = UIColor.green()
+    @IBInspectable var color_3      : UIColor = UIColor.blue()
+    @IBInspectable var color_4      : UIColor = UIColor.purple()
+    @IBInspectable var color_5      : UIColor = UIColor.cyan()
+    @IBInspectable var color_6      : UIColor = UIColor.orange()
     
     @IBInspectable var data_1       : CGFloat = 100
     @IBInspectable var data_2       : CGFloat = 200

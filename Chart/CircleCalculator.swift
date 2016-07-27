@@ -61,7 +61,7 @@ class CircleCalculator {
         let total   = self.total()
         var angle : Double = start()
         
-        for (i,element) in data.enumerate() {
+        for (i,element) in data.enumerated() {
             
             if element <= 0 {
                 continue
