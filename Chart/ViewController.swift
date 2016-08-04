@@ -121,20 +121,20 @@ class ViewController: UIViewController {
         //circle1.userData = v1
         //circle2.userData = t1
         
-        line.setValues(ld.oneYear(), animated: animate)
+        line.setValues(ld.fiveYears(), animated: animate, limit: 300)
     }
 
     @IBAction func b2(_ sender: AnyObject) {
         //   bar1.setValues(v2, animated: animate)
         //bar2.setValues(t2, animated: animate)
         
-        line.setValues(ld.threeYears(), animated: animate)
+        line.setValues(ld.fiveYears(), animated: animate, limit: 3*300)
     }
     @IBAction func b3(_ sender: AnyObject) {
         //bar1.setValues(v3, animated: animate)
         //bar2.setValues(t3, animated: animate)
         
-        line.setValues(ld.fiveYears(), animated: animate)
+        line.setValues(ld.fiveYears(), animated: animate, limit: 5*300)
     }
     
     

@@ -26,9 +26,9 @@ class LineData {
         
         for array in arrays {
             for v in array {
-                if (index % count) == 0 {
+                //    if (index % count) == 0 {
                     values.append(v)
-                }
+                //}
                 
                 index = index + 1
             }
@@ -47,5 +47,10 @@ class LineData {
     func fiveYears() -> [Double] {
         return self.flatten(arrays: [data_2016_2015,data_2015_2014,data_2014_2013,data_2013_2012,data_2012_2011])
     }
+    
+    
+    
+    
+    
 }
 

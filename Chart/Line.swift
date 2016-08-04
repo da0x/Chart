@@ -100,28 +100,32 @@ import UIKit
     
     
     // Animations
+    private var currentLimit   : Int = 10
+    private var targetLimit    : Int = 0
+    private var originalLimit  : Int = 0
+    
     private var current : [Double]?
     private var target  : [Double]?
     
     private var original    : [Double]?
     private var displayLink : CADisplayLink!
     private var startTime   : TimeInterval = 0
-    private var duration    : TimeInterval = 10
+    private var duration    : TimeInterval = 0.5
     
-    func setValues(_ values:[Double], animated:Bool){
+    func setValues(_ values:[Double], animated:Bool, limit: Int){
         if animated, let _ = current {
             original = current!
-            target   = values
+            originalLimit = currentLimit
             
-            //while current?.count < target?.count {
-            //    current?.append(0)
-            //}
+            target   = values
+            targetLimit = limit
             
             displayLink = CADisplayLink(target: self, selector: #selector(CompoundBar.animateMe))
             displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
             startTime = 0
         } else {
             current = values
+            currentLimit = limit
         }
         setNeedsDisplay()
     }
@@ -129,6 +133,7 @@ import UIKit
     func animateMe(){
         if startTime == 0 {
             startTime = displayLink.timestamp
+            return
         }
         
         let t1 = self.startTime
@@ -145,7 +150,18 @@ import UIKit
         let r = Double( dt / duration )
         var c = [Double]()
         
+        
+        let Cil = Double(originalLimit)
+        let Til = Double(targetLimit)
+        
+        let Vi = Cil + r * ( Til - Cil )
+        currentLimit = Int(Vi)
+        
         for (i,_) in target!.enumerated() {
+            
+            if i > currentLimit {
+                break
+            }
             
             if i >= current?.count {
                 current?.append(target![i])
@@ -162,4 +178,5 @@ import UIKit
         setNeedsDisplay()
     }
 }
+
 
