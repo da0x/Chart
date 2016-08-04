@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F7D081D1D53B9C800F552A5 /* ACWI-2008-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D08151D53B9C800F552A5 /* ACWI-2008-yql.json */; };
+		4F7D081E1D53B9C800F552A5 /* ACWI-2009-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D08161D53B9C800F552A5 /* ACWI-2009-yql.json */; };
+		4F7D081F1D53B9C800F552A5 /* ACWI-2010-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D08171D53B9C800F552A5 /* ACWI-2010-yql.json */; };
+		4F7D08201D53B9C800F552A5 /* ACWI-2011-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D08181D53B9C800F552A5 /* ACWI-2011-yql.json */; };
+		4F7D08211D53B9C800F552A5 /* ACWI-2012-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D08191D53B9C800F552A5 /* ACWI-2012-yql.json */; };
+		4F7D08221D53B9C800F552A5 /* ACWI-2013-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081A1D53B9C800F552A5 /* ACWI-2013-yql.json */; };
+		4F7D08231D53B9C800F552A5 /* ACWI-2014-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */; };
+		4F7D08241D53B9C800F552A5 /* ACWI-2015-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */; };
 		4FA663401D3D78520035C419 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6633F1D3D78520035C419 /* Line.swift */; };
 		4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */; };
 		4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD581CC6EC3F00A9389E /* Assets.xcassets */; };
@@ -22,6 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F7D08151D53B9C800F552A5 /* ACWI-2008-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2008-yql.json"; path = "Chart/ACWI-2008-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D08161D53B9C800F552A5 /* ACWI-2009-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2009-yql.json"; path = "Chart/ACWI-2009-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D08171D53B9C800F552A5 /* ACWI-2010-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2010-yql.json"; path = "Chart/ACWI-2010-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D08181D53B9C800F552A5 /* ACWI-2011-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2011-yql.json"; path = "Chart/ACWI-2011-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D08191D53B9C800F552A5 /* ACWI-2012-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2012-yql.json"; path = "Chart/ACWI-2012-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D081A1D53B9C800F552A5 /* ACWI-2013-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2013-yql.json"; path = "Chart/ACWI-2013-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2014-yql.json"; path = "Chart/ACWI-2014-yql.json"; sourceTree = SOURCE_ROOT; };
+		4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2015-yql.json"; path = "Chart/ACWI-2015-yql.json"; sourceTree = SOURCE_ROOT; };
 		4FA6633F1D3D78520035C419 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Chart/Line.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chart/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD581CC6EC3F00A9389E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chart/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -53,6 +69,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F7D08041D53B98800F552A5 /* LineData */ = {
+			isa = PBXGroup;
+			children = (
+				4F7D08151D53B9C800F552A5 /* ACWI-2008-yql.json */,
+				4F7D08161D53B9C800F552A5 /* ACWI-2009-yql.json */,
+				4F7D08171D53B9C800F552A5 /* ACWI-2010-yql.json */,
+				4F7D08181D53B9C800F552A5 /* ACWI-2011-yql.json */,
+				4F7D08191D53B9C800F552A5 /* ACWI-2012-yql.json */,
+				4F7D081A1D53B9C800F552A5 /* ACWI-2013-yql.json */,
+				4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */,
+				4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */,
+			);
+			name = LineData;
+			path = ../Chart/Base.lproj;
+			sourceTree = "<group>";
+		};
 		4FACDD591CC6EC3F00A9389E /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +127,7 @@
 				4FACDD641CC6EC3F00A9389E /* Info.plist */,
 				4FA6633F1D3D78520035C419 /* Line.swift */,
 				4FC960521D3D80F1003F4D6E /* LineData.swift */,
+				4F7D08041D53B98800F552A5 /* LineData */,
 				4FACDD651CC6EC3F00A9389E /* ViewController.swift */,
 			);
 			path = CompoundBarChart;
@@ -171,9 +204,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7D08201D53B9C800F552A5 /* ACWI-2011-yql.json in Resources */,
+				4F7D08211D53B9C800F552A5 /* ACWI-2012-yql.json in Resources */,
 				4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */,
+				4F7D08231D53B9C800F552A5 /* ACWI-2014-yql.json in Resources */,
+				4F7D081E1D53B9C800F552A5 /* ACWI-2009-yql.json in Resources */,
+				4F7D081D1D53B9C800F552A5 /* ACWI-2008-yql.json in Resources */,
 				4FACDD7E1CC6EDBF00A9389E /* LaunchScreen.storyboard in Resources */,
 				4FACDD7D1CC6EDB900A9389E /* Main.storyboard in Resources */,
+				4F7D081F1D53B9C800F552A5 /* ACWI-2010-yql.json in Resources */,
+				4F7D08221D53B9C800F552A5 /* ACWI-2013-yql.json in Resources */,
+				4F7D08241D53B9C800F552A5 /* ACWI-2015-yql.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -295,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "$(SRCROOT)/Chart/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -322,6 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "$(SRCROOT)/Chart/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Daher-Alfawares.CompoundBarChart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
