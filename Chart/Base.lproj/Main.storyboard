@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="786" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfJ-D6-751" customClass="CompoundBar" customModule="Chart" customModuleProvider="target">
@@ -35,7 +35,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="4YX-p3-hg8">
-                                <frame key="frameInset" minX="188" minY="253" width="171" height="30"/>
+                                <frame key="frameInset" minX="188" minY="253" width="243" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-wM-rzs">
@@ -57,6 +57,14 @@
                                         <state key="normal" title="5 Years"/>
                                         <connections>
                                             <action selector="b3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CKw-4I-4oG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcn-yX-r7q">
+                                        <frame key="frameInset" minX="185" width="58" height="30"/>
+                                        <state key="normal" title="10 Years"/>
+                                        <connections>
+                                            <action selector="b3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yv8-wx-G7C"/>
+                                            <action selector="b4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJH-dC-eP6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,7 +109,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mC-Dw-l89" customClass="Line" customModule="Chart" customModuleProvider="target">
-                                <frame key="frameInset" minX="57" minY="341" width="519" height="158"/>
+                                <frame key="frameInset" minX="57" minY="341" width="692" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -109,10 +117,10 @@
                                         <color key="value" red="0.23855512700000001" green="0.01217514816" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.5793295585262086" green="0.81070793671288588" blue="0.93486789163090123" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                        <color key="value" red="0.91225187768240346" green="0.20177360284987961" blue="0.90774565952913233" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.24587656154587151" green="0.40686096789808984" blue="0.6519413894849786" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -124,6 +132,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="786" height="1024"/>
                     <connections>
                         <outlet property="area" destination="N8t-Zj-j50" id="kIr-Qq-9A8"/>
                         <outlet property="bar1" destination="gfJ-D6-751" id="w4C-EQ-Gzb"/>
@@ -135,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253.59999999999999" y="212.74362818590706"/>
+            <point key="canvasLocation" x="252.80000000000001" y="212.29385307346328"/>
         </scene>
     </scenes>
 </document>

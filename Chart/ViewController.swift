@@ -115,28 +115,31 @@ class ViewController: UIViewController {
     let ld = LineData()
 
     @IBAction func b1(_ sender: AnyObject) {
-        // bar1.setValues(v1, animated: animate)
-        //bar2.setValues(t1, animated: animate)
+        bar1.setValues(v1, animated: animate)
+        bar2.setValues(t1, animated: animate)
         
-        //circle1.userData = v1
-        //circle2.userData = t1
+        circle1.userData = v1
+        circle2.userData = t1
         
-        line.setValues(ld.fiveYears(), animated: animate, limit: 300)
+        line.setValues(ld.data(), animated: animate, startFrom: Date(timeIntervalSinceNow: -60*60*24*256))
     }
 
     @IBAction func b2(_ sender: AnyObject) {
-        //   bar1.setValues(v2, animated: animate)
-        //bar2.setValues(t2, animated: animate)
+        bar1.setValues(v2, animated: animate)
+        bar2.setValues(t2, animated: animate)
         
-        line.setValues(ld.fiveYears(), animated: animate, limit: 3*300)
+        line.setValues(ld.data(), animated: animate, startFrom: Date(timeIntervalSinceNow: -60*60*24*256*3))
     }
     @IBAction func b3(_ sender: AnyObject) {
-        //bar1.setValues(v3, animated: animate)
-        //bar2.setValues(t3, animated: animate)
+        bar1.setValues(v3, animated: animate)
+        bar2.setValues(t3, animated: animate)
         
-        line.setValues(ld.fiveYears(), animated: animate, limit: 5*300)
+        line.setValues(ld.data(), animated: animate, startFrom: Date(timeIntervalSinceNow: -60*60*24*256*5))
     }
     
+    @IBAction func b4(_ sender: AnyObject) {
+        line.setValues(ld.data(), animated: animate, startFrom: Date(timeIntervalSinceNow: -60*60*24*256*10))
+    }
     
     func createPDFfromUIView(_ aView:UIView,saveToDocumentsWithFileName aFilename:String)
     {

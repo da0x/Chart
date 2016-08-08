@@ -16,6 +16,7 @@
 		4F7D08231D53B9C800F552A5 /* ACWI-2014-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */; };
 		4F7D08241D53B9C800F552A5 /* ACWI-2015-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */; };
 		4FA663401D3D78520035C419 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6633F1D3D78520035C419 /* Line.swift */; };
+		4FAB08EA1D543B4F00FECC94 /* Line copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB08E91D543B4F00FECC94 /* Line copy.swift */; };
 		4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */; };
 		4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD581CC6EC3F00A9389E /* Assets.xcassets */; };
 		4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD5E1CC6EC3F00A9389E /* Circle.swift */; };
@@ -26,6 +27,7 @@
 		4FACDD7D1CC6EDB900A9389E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5C1CC6EC3F00A9389E /* Main.storyboard */; };
 		4FACDD7E1CC6EDBF00A9389E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD5A1CC6EC3F00A9389E /* LaunchScreen.storyboard */; };
 		4FC960531D3D80F1003F4D6E /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC960521D3D80F1003F4D6E /* LineData.swift */; };
+		4FCC5CAF1D54E4B60040C406 /* ACWI-2016-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCC5CAE1D54E4B60040C406 /* ACWI-2016-yql.json */; };
 		4FCF01901CE101A100E95189 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF018F1CE101A100E95189 /* Area.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 		4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2014-yql.json"; path = "Chart/ACWI-2014-yql.json"; sourceTree = SOURCE_ROOT; };
 		4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2015-yql.json"; path = "Chart/ACWI-2015-yql.json"; sourceTree = SOURCE_ROOT; };
 		4FA6633F1D3D78520035C419 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Chart/Line.swift; sourceTree = SOURCE_ROOT; };
+		4FAB08E91D543B4F00FECC94 /* Line copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Line copy.swift"; path = "Chart/Line copy.swift"; sourceTree = SOURCE_ROOT; };
 		4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chart/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD581CC6EC3F00A9389E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chart/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		4FACDD5B1CC6EC3F00A9389E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		4FACDD741CC6EC5500A9389E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChartTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		4FBE40FF1CC535EC0056DFE3 /* Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC960521D3D80F1003F4D6E /* LineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineData.swift; path = Chart/LineData.swift; sourceTree = SOURCE_ROOT; };
+		4FCC5CAE1D54E4B60040C406 /* ACWI-2016-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2016-yql.json"; path = "Chart/ACWI-2016-yql.json"; sourceTree = SOURCE_ROOT; };
 		4FCF018F1CE101A100E95189 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Area.swift; path = Chart/Area.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,7 @@
 		4F7D08041D53B98800F552A5 /* LineData */ = {
 			isa = PBXGroup;
 			children = (
+				4FCC5CAE1D54E4B60040C406 /* ACWI-2016-yql.json */,
 				4F7D08151D53B9C800F552A5 /* ACWI-2008-yql.json */,
 				4F7D08161D53B9C800F552A5 /* ACWI-2009-yql.json */,
 				4F7D08171D53B9C800F552A5 /* ACWI-2010-yql.json */,
@@ -126,6 +131,7 @@
 				4FACDD621CC6EC3F00A9389E /* CompoundBarCalculatorTests.swift */,
 				4FACDD641CC6EC3F00A9389E /* Info.plist */,
 				4FA6633F1D3D78520035C419 /* Line.swift */,
+				4FAB08E91D543B4F00FECC94 /* Line copy.swift */,
 				4FC960521D3D80F1003F4D6E /* LineData.swift */,
 				4F7D08041D53B98800F552A5 /* LineData */,
 				4FACDD651CC6EC3F00A9389E /* ViewController.swift */,
@@ -207,6 +213,7 @@
 				4F7D08201D53B9C800F552A5 /* ACWI-2011-yql.json in Resources */,
 				4F7D08211D53B9C800F552A5 /* ACWI-2012-yql.json in Resources */,
 				4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */,
+				4FCC5CAF1D54E4B60040C406 /* ACWI-2016-yql.json in Resources */,
 				4F7D08231D53B9C800F552A5 /* ACWI-2014-yql.json in Resources */,
 				4F7D081E1D53B9C800F552A5 /* ACWI-2009-yql.json in Resources */,
 				4F7D081D1D53B9C800F552A5 /* ACWI-2008-yql.json in Resources */,
@@ -232,6 +239,7 @@
 				4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */,
 				4FA663401D3D78520035C419 /* Line.swift in Sources */,
 				4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */,
+				4FAB08EA1D543B4F00FECC94 /* Line copy.swift in Sources */,
 				4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */,
 				4FC960531D3D80F1003F4D6E /* LineData.swift in Sources */,
 			);

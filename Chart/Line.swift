@@ -12,35 +12,35 @@ import UIKit
     
     // area view model
     class Model {
-        var values : [Double]
+        var values : [Quote]
         
-        init( values : [Double] ){
+        init( values : [Quote] ){
             self.values = values
         }
     }
     
     class Calculator {
         
-        private var values  : [Double]
+        private var values  : [Quote]
         private var maximum : Double = 0
         private var minimum : Double = 999999999999
         
-        init(values : [Double]){
+        
+        init(values : [Quote]){
             self.values = values
             
             //create the maximum.
             for value in values {
                 
                 // maximum
-                if maximum < value {
-                    maximum = value
+                if maximum < value.Close {
+                    maximum = value.Close
                 }
                 
-                if minimum > value {
-                    minimum = value
+                if minimum > value.Close {
+                    minimum = value.Close
                 }
             }
-            
             
             //...
             
@@ -50,12 +50,33 @@ import UIKit
             var norms : [Double] = []
 
             // each value
-            for (_,value) in values.reversed().enumerated() {
+            for (_,value) in values.enumerated() {
                 
                 // set value
-                norms.append((value-minimum)/(maximum-minimum))
+                norms.append((value.Close-minimum)/(maximum-minimum))
             }
 
+
+//            var y = Double(0.5)
+//            
+//            // each value
+//            for (i,value) in values.enumerated() {
+//                
+//                if i == 0 { // skip first
+//                    y = Double(0.5)
+//                } else {
+//                    
+//                    let y0 = values[i-1].Close
+//                    let y1 = values[i].Close
+//                    
+//                    let r = (y1-y0)/y0
+//                    
+//                    y = Double(y + 0.5 * r)
+//            }
+//                // set value
+//                norms.append(y)
+//            }
+            
             return norms
         }
     }
@@ -100,32 +121,32 @@ import UIKit
     
     
     // Animations
-    private var currentLimit   : Int = 10
-    private var targetLimit    : Int = 0
-    private var originalLimit  : Int = 0
+    private var currentLimit   : Date = Date()
+    private var targetLimit    : Date = Date()
+    private var originalLimit  : Date = Date()
     
-    private var current : [Double]?
-    private var target  : [Double]?
+    private var current : [Quote]?
+    private var target  : [Quote]?
     
-    private var original    : [Double]?
+    private var original    : [Quote]?
     private var displayLink : CADisplayLink!
     private var startTime   : TimeInterval = 0
     private var duration    : TimeInterval = 0.5
     
-    func setValues(_ values:[Double], animated:Bool, limit: Int){
+    func setValues(_ values:[Quote], animated:Bool, startFrom: Date){
         if animated, let _ = current {
             original = current!
             originalLimit = currentLimit
             
             target   = values
-            targetLimit = limit
+            targetLimit = startFrom
             
             displayLink = CADisplayLink(target: self, selector: #selector(CompoundBar.animateMe))
             displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
             startTime = 0
         } else {
             current = values
-            currentLimit = limit
+            currentLimit = startFrom
         }
         setNeedsDisplay()
     }
@@ -148,30 +169,22 @@ import UIKit
         }
         
         let r = Double( dt / duration )
-        var c = [Double]()
+        var c = [Quote]()
         
         
-        let Cil = Double(originalLimit)
-        let Til = Double(targetLimit)
+        let Cil = Double(originalLimit.timeIntervalSince1970)
+        let Til = Double(targetLimit.timeIntervalSince1970)
         
         let Vi = Cil + r * ( Til - Cil )
-        currentLimit = Int(Vi)
+        currentLimit = Date(timeIntervalSince1970: TimeInterval(Vi))
         
-        for (i,_) in target!.enumerated() {
+        for (_,value) in target!.enumerated() {
             
-            if i > currentLimit {
-                break
+            if value.Date.timeIntervalSince(currentLimit) < 0 {
+                continue
             }
             
-            if i >= current?.count {
-                current?.append(target![i])
-            }
-            
-            let Ci = current?[i] ?? 0
-            let Ti = target![i]
-            
-            let Vi = Ci + r * ( Ti - Ci )
-            c.append(Vi)
+            c.append(value)
         }
         
         current = c
