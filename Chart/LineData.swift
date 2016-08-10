@@ -106,14 +106,13 @@ class LineData {
         }
     }
     
-    
     func month(of date:Date) -> Int {
         let calendar = Calendar.current
         let component = calendar.component(Calendar.Unit.month, from: date)
         return component
     }
     
-    let offline = false
+    let offline = true
     func url(year:String) -> URL {
         if offline {
             let path = Bundle.main.pathForResource("ACWI-\(year)-yql", ofType:"json")

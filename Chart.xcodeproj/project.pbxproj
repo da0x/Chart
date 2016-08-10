@@ -16,7 +16,6 @@
 		4F7D08231D53B9C800F552A5 /* ACWI-2014-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */; };
 		4F7D08241D53B9C800F552A5 /* ACWI-2015-yql.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */; };
 		4FA663401D3D78520035C419 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6633F1D3D78520035C419 /* Line.swift */; };
-		4FAB08EA1D543B4F00FECC94 /* Line copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB08E91D543B4F00FECC94 /* Line copy.swift */; };
 		4FACDD661CC6EC3F00A9389E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */; };
 		4FACDD671CC6EC3F00A9389E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FACDD581CC6EC3F00A9389E /* Assets.xcassets */; };
 		4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDD5E1CC6EC3F00A9389E /* Circle.swift */; };
@@ -41,7 +40,6 @@
 		4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2014-yql.json"; path = "Chart/ACWI-2014-yql.json"; sourceTree = SOURCE_ROOT; };
 		4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ACWI-2015-yql.json"; path = "Chart/ACWI-2015-yql.json"; sourceTree = SOURCE_ROOT; };
 		4FA6633F1D3D78520035C419 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Chart/Line.swift; sourceTree = SOURCE_ROOT; };
-		4FAB08E91D543B4F00FECC94 /* Line copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Line copy.swift"; path = "Chart/Line copy.swift"; sourceTree = SOURCE_ROOT; };
 		4FACDD571CC6EC3F00A9389E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Chart/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		4FACDD581CC6EC3F00A9389E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Chart/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		4FACDD5B1CC6EC3F00A9389E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				4FACDD621CC6EC3F00A9389E /* CompoundBarCalculatorTests.swift */,
 				4FACDD641CC6EC3F00A9389E /* Info.plist */,
 				4FA6633F1D3D78520035C419 /* Line.swift */,
-				4FAB08E91D543B4F00FECC94 /* Line copy.swift */,
 				4FC960521D3D80F1003F4D6E /* LineData.swift */,
 				4F7D08041D53B98800F552A5 /* LineData */,
 				4FACDD651CC6EC3F00A9389E /* ViewController.swift */,
@@ -239,7 +236,6 @@
 				4FACDD6C1CC6EC3F00A9389E /* CompoundBar.swift in Sources */,
 				4FA663401D3D78520035C419 /* Line.swift in Sources */,
 				4FACDD6A1CC6EC3F00A9389E /* Circle.swift in Sources */,
-				4FAB08EA1D543B4F00FECC94 /* Line copy.swift in Sources */,
 				4FACDD6D1CC6EC3F00A9389E /* CompoundBarCalculator.swift in Sources */,
 				4FC960531D3D80F1003F4D6E /* LineData.swift in Sources */,
 			);

@@ -16,7 +16,7 @@ class Color {
         let g = (tag & 0x00FF00) >> 8
         let b = (tag & 0x0000FF)
         let c = F(255.0)
-       return UIColor(red:F(r)/c,green:F(g)/c,blue:F(b)/c,alpha:1.0)
+        return UIColor(red:F(r)/c,green:F(g)/c,blue:F(b)/c,alpha:1.0)
     }
     
     // Palette Style
@@ -66,7 +66,7 @@ class Sample {
 
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var bar1: CompoundBar!
     @IBOutlet weak var bar2: CompoundBar!
     
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
                 Area.Element( Values: Sample().socialSecurity_Real, Color: Color.socialSecurity()),
                 Area.Element( Values: Sample().pension,             Color: Color.pension()),
                 Area.Element( Values: Sample().socialSecurity,      Color: Color.action()),
-            ]
+                ]
         )
     }
     
@@ -98,14 +98,14 @@ class ViewController: UIViewController {
         
         self.createPDFfromUIView(self.view, saveToDocumentsWithFileName: "test.pdf")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     let animate = true
-      
+    
     let v1 : [Double] = [ 20, 40,  100,  56,  90,  20,  30 ]
     let v2 : [Double] = [ 80, 1000, 10,   0,  30, 400,  50 ]
     let v3 : [Double] = [ 10, 40,   10, 300, 200, 100, 300 ]
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
     let t2 : [Double] = [ 20, 100,  10,   0,  30,  40,  50 ]
     let t3 : [Double] = [ 40, 80,  152,  30,  20, 100, 300 ]
     let ld = LineData()
-
+    
     @IBAction func b1(_ sender: AnyObject) {
         bar1.setValues(v1, animated: animate)
         bar2.setValues(t1, animated: animate)
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         
         line.setValues(ld.data(), animated: animate, startFrom: Date(timeIntervalSinceNow: -60*60*24*256))
     }
-
+    
     @IBAction func b2(_ sender: AnyObject) {
         bar1.setValues(v2, animated: animate)
         bar2.setValues(t2, animated: animate)
@@ -144,32 +144,30 @@ class ViewController: UIViewController {
     func createPDFfromUIView(_ aView:UIView,saveToDocumentsWithFileName aFilename:String)
     {
         let pdfData = NSMutableData()
-    // Creates a mutable data object for updating with binary data, like a byte array
-    
-    
-    // Points the pdf converter to the mutable data object and to the UIView to be converted
-    UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil);
-    UIGraphicsBeginPDFPage();
-    let pdfContext = UIGraphicsGetCurrentContext();
-    
-    // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
-    
-    aView.layer.draw(in: pdfContext!)
-        aView.drawHierarchy(in: aView.bounds, afterScreenUpdates: false)
-    
-    // remove PDF rendering context
-    UIGraphicsEndPDFContext();
-    
-    // Retrieves the document directories from the iOS device
-    let documentDirectories = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        // Creates a mutable data object for updating with binary data, like a byte array
         
-    let documentDirectory = documentDirectories[0] as String
-    let documentDirectoryFilename = documentDirectory + "/test.pdf"
-    
-    // instructs the mutable data object to write its context to a file on disk
-    pdfData.write(toFile: documentDirectoryFilename, atomically:true)
-    print("documentDirectoryFileName: \(documentDirectoryFilename)")
+        // Points the pdf converter to the mutable data object and to the UIView to be converted
+        UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil);
+        UIGraphicsBeginPDFPage();
+        let pdfContext = UIGraphicsGetCurrentContext();
+        
+        // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
+        
+        aView.layer.draw(in: pdfContext!)
+        aView.drawHierarchy(in: aView.bounds, afterScreenUpdates: false)
+        
+        // remove PDF rendering context
+        UIGraphicsEndPDFContext();
+        
+        // Retrieves the document directories from the iOS device
+        let documentDirectories = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        
+        let documentDirectory = documentDirectories[0] as String
+        let documentDirectoryFilename = documentDirectory + "/test.pdf"
+        
+        // instructs the mutable data object to write its context to a file on disk
+        pdfData.write(toFile: documentDirectoryFilename, atomically:true)
+        print("documentDirectoryFileName: \(documentDirectoryFilename)")
     }
-    
 }
 
