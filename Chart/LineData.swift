@@ -113,7 +113,7 @@ class LineData {
         return component
     }
     
-    let offline = true
+    let offline = false
     func url(year:String) -> URL {
         if offline {
             let path = Bundle.main.pathForResource("ACWI-\(year)-yql", ofType:"json")

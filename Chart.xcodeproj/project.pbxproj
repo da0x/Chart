@@ -76,7 +76,6 @@
 		4F7D08041D53B98800F552A5 /* LineData */ = {
 			isa = PBXGroup;
 			children = (
-				4FCC5CAE1D54E4B60040C406 /* ACWI-2016-yql.json */,
 				4F7D08151D53B9C800F552A5 /* ACWI-2008-yql.json */,
 				4F7D08161D53B9C800F552A5 /* ACWI-2009-yql.json */,
 				4F7D08171D53B9C800F552A5 /* ACWI-2010-yql.json */,
@@ -85,6 +84,7 @@
 				4F7D081A1D53B9C800F552A5 /* ACWI-2013-yql.json */,
 				4F7D081B1D53B9C800F552A5 /* ACWI-2014-yql.json */,
 				4F7D081C1D53B9C800F552A5 /* ACWI-2015-yql.json */,
+				4FCC5CAE1D54E4B60040C406 /* ACWI-2016-yql.json */,
 			);
 			name = LineData;
 			path = ../Chart/Base.lproj;
