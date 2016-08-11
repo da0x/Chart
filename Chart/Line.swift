@@ -55,27 +55,6 @@ import UIKit
                 // set value
                 norms.append((value.Close-minimum)/(maximum-minimum))
             }
-
-
-//            var y = Double(0.5)
-//            
-//            // each value
-//            for (i,value) in values.enumerated() {
-//                
-//                if i == 0 { // skip first
-//                    y = Double(0.5)
-//                } else {
-//                    
-//                    let y0 = values[i-1].Close
-//                    let y1 = values[i].Close
-//                    
-//                    let r = (y1-y0)/y0
-//                    
-//                    y = Double(y + 0.5 * r)
-//            }
-//                // set value
-//                norms.append(y)
-//            }
             
             return norms
         }
@@ -118,36 +97,30 @@ import UIKit
     
     private let threshold = Double(0.05)
     
-    
-    
     // Animations
     private var currentLimit   : Date = Date()
     private var targetLimit    : Date = Date()
     private var originalLimit  : Date = Date()
     
-    private var current : [Quote]?
-    private var target  : [Quote]?
-    
-    private var original    : [Quote]?
-    private var displayLink : CADisplayLink!
-    private var startTime   : TimeInterval = 0
-    private var duration    : TimeInterval = 0.5
+    private var current        : [Quote]?
+    private var displayLink    : CADisplayLink!
+    private var startTime      : TimeInterval = 0
+    private var duration       : TimeInterval = 0.5
     
     func setValues(_ values:[Quote], animated:Bool, startFrom: Date){
         if animated, let _ = current {
-            original = current!
-            originalLimit = currentLimit
+            originalLimit   = currentLimit
+            targetLimit     = startFrom
+            displayLink     = CADisplayLink(target: self, selector: #selector(CompoundBar.animateMe))
+            startTime       = 0
             
-            target   = values
-            targetLimit = startFrom
-            
-            displayLink = CADisplayLink(target: self, selector: #selector(CompoundBar.animateMe))
             displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
-            startTime = 0
+            
         } else {
-            current = values
-            currentLimit = startFrom
+            current         = values
+            currentLimit    = startFrom
         }
+
         setNeedsDisplay()
     }
     
@@ -156,38 +129,26 @@ import UIKit
             startTime = displayLink.timestamp
             return
         }
-        
+
         let t1 = self.startTime
         let t2 = displayLink.timestamp
         var dt = t2 - t1
-        
+
         if dt > duration {
             displayLink?.invalidate()
             
             // get a final accurate frame.
             dt = duration
         }
-        
+
         let r = Double( dt / duration )
-        var c = [Quote]()
-        
-        
+
         let Cil = Double(originalLimit.timeIntervalSince1970)
         let Til = Double(targetLimit.timeIntervalSince1970)
-        
+
         let Vi = Cil + r * ( Til - Cil )
         currentLimit = Date(timeIntervalSince1970: TimeInterval(Vi))
-        
-        for (_,value) in target!.enumerated() {
-            
-            if value.Date.timeIntervalSince(currentLimit) < 0 {
-                continue
-            }
-            
-            c.append(value)
-        }
-        
-        current = c
+
         setNeedsDisplay()
     }
 }

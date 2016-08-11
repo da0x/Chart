@@ -62,7 +62,7 @@ class LineData {
         return quotes
     }
     
-    func importTheData(array: [AnyObject]){
+    private func importTheData(array: [AnyObject]){
         
         for obj in array {
             let quote = Quote(dictionary: (obj as? [String:String])!)
@@ -70,13 +70,13 @@ class LineData {
         }
     }
     
-    func sortTheData(){
+    private func sortTheData(){
         quotes.sort { (q1, q2) -> Bool in
             return q1.Date.timeIntervalSince(q2.Date) < 0
         }
     }
     
-    func filterTheData(){
+    private func filterTheData(){
         
         var remove = [Int]() // indecies to remove
         
@@ -100,20 +100,20 @@ class LineData {
         }
     }
     
-    func printTheData(){
+    private func printTheData(){
         for quote in quotes {
             print("++++ \(quote.Date) \t\t: \(quote.Close)")
         }
     }
     
-    func month(of date:Date) -> Int {
+    private func month(of date:Date) -> Int {
         let calendar = Calendar.current
         let component = calendar.component(Calendar.Unit.month, from: date)
         return component
     }
     
-    let offline = true
-    func url(year:String) -> URL {
+    private let offline = true
+    private func url(year:String) -> URL {
         if offline {
             let path = Bundle.main.pathForResource("ACWI-\(year)-yql", ofType:"json")
             return URL(fileURLWithPath: path!)
