@@ -19,7 +19,7 @@ import UIKit
         }
     }
     
-    class Calculator {
+    class RangeCalculator {
         
         private var values  : [Quote]
         private var maximum : Double = 0
@@ -46,8 +46,24 @@ import UIKit
                     minimum = value.Close
                 }
             }
-            
-            //...
+        }
+        
+        func min()->Double { return minimum }
+        func max()->Double { return maximum }
+    }
+    
+    class Calculator {
+        
+        private var values  : [Quote]
+        private var maximum : Double
+        private var minimum : Double
+        private var start   : Date
+        
+        init(values : [Quote], start : Date, min : Double, max : Double ){
+            self.values  = values
+            self.start   = start
+            self.minimum = min
+            self.maximum = max
         }
         
         func norms() -> [Double] {
@@ -68,7 +84,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var fillColor : UIColor = UIColor.black()
+    @IBInspectable var fillColor   : UIColor = UIColor.black()
     @IBInspectable var strokeColor : UIColor = UIColor.black()
     
     override func draw(_ rect: CGRect) {
@@ -77,7 +93,7 @@ import UIKit
         fillColor.setFill()
         strokeColor.setStroke()
         
-        let calculator = Calculator(values: current, start: currentLimit)
+        let calculator = Calculator(values: current, start: start, min: minimum, max: maximum)
         let norms = calculator.norms()
         
        
@@ -103,30 +119,62 @@ import UIKit
         path.stroke()
     }
     
-    private let threshold = Double(0.05)
+    class AnimationCurve {
+        private var target : Double
+        private var origin : Double
+        
+        init( origin: Double, target: Double ){
+            self.origin = origin
+            self.target = target
+        }
+        
+        func linear(dt:Double, duration:Double) -> Double {
+            var r = Double( dt / duration )
+            
+            if r > 1 { r = 1 }
+            if r < 0 { r = 0 }
+            
+            let Oi = Double(origin)
+            let Ti = Double(target)
+            
+            let Vi = Oi + r * ( Ti - Oi )
+            
+        
+            return Vi
+        }
+    }
     
     // Animations
-    private var currentLimit   : Date = Date()
-    private var targetLimit    : Date = Date()
-    private var originalLimit  : Date = Date()
+    private var current             : [Quote]?
+    private var start               : Date = Date()
+    private var minimum             : Double = 0
+    private var maximum             : Double = 0
     
-    private var current        : [Quote]?
+    private var minAnimationCurve   : AnimationCurve!
+    private var maxAnimationCurve   : AnimationCurve!
+    private var startAnimationCurve : AnimationCurve!
+    
     private var displayLink    : CADisplayLink!
     private var startTime      : TimeInterval = 0
     private var duration       : TimeInterval = 1
     
     func setValues(_ values:[Quote], animated:Bool, startFrom: Date){
         if animated, let _ = current {
-            originalLimit   = currentLimit
-            targetLimit     = startFrom
+            
+            startAnimationCurve = AnimationCurve(origin: start.timeIntervalSince1970, target: startFrom.timeIntervalSince1970)
+            minAnimationCurve   = AnimationCurve(origin: minimum, target: RangeCalculator(values: current!, start: startFrom).min())
+            maxAnimationCurve   = AnimationCurve(origin: maximum, target: RangeCalculator(values: current!, start: startFrom).max())
+            
             displayLink     = CADisplayLink(target: self, selector: #selector(Line.animateMe))
             startTime       = 0
             
             displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
             
         } else {
-            current         = values
-            currentLimit    = startFrom
+            current   = values
+            start     = startFrom
+            minimum   = RangeCalculator(values: current!, start: startFrom).min()
+            maximum   = RangeCalculator(values: current!, start: startFrom).max()
         }
 
         setNeedsDisplay()
@@ -153,13 +201,13 @@ import UIKit
             dt = duration
         }
 
-        let r = Double( dt / duration )
-
-        let Cil = Double(originalLimit.timeIntervalSince1970)
-        let Til = Double(targetLimit.timeIntervalSince1970)
-
-        let Vi = Cil + r * ( Til - Cil )
-        currentLimit = Date(timeIntervalSince1970: TimeInterval(Vi))
+        let s = startAnimationCurve.linear(dt: dt, duration: duration)
+        let m = minAnimationCurve.linear(dt: dt, duration: duration)
+        let x = maxAnimationCurve.linear(dt: dt, duration: duration)
+        
+        start   = Date(timeIntervalSince1970: s)
+        minimum = m
+        maximum = x
 
         setNeedsDisplay()
     }
