@@ -24,13 +24,18 @@ import UIKit
         private var values  : [Quote]
         private var maximum : Double = 0
         private var minimum : Double = 999999999999
+        private var start   : Date
         
-        
-        init(values : [Quote]){
+        init(values : [Quote], start : Date){
             self.values = values
+            self.start  = start
             
             //create the maximum.
             for value in values {
+                
+                if value.Date.timeIntervalSince(start) < 0 {
+                    continue
+                }
                 
                 // maximum
                 if maximum < value.Close {
@@ -43,7 +48,6 @@ import UIKit
             }
             
             //...
-            
         }
         
         func norms() -> [Double] {
@@ -51,6 +55,10 @@ import UIKit
 
             // each value
             for (_,value) in values.enumerated() {
+                
+                if value.Date.timeIntervalSince(start) < 0 {
+                    continue
+                }
                 
                 // set value
                 norms.append((value.Close-minimum)/(maximum-minimum))
@@ -69,7 +77,7 @@ import UIKit
         fillColor.setFill()
         strokeColor.setStroke()
         
-        let calculator = Calculator(values: current)
+        let calculator = Calculator(values: current, start: currentLimit)
         let norms = calculator.norms()
         
        
@@ -105,16 +113,16 @@ import UIKit
     private var current        : [Quote]?
     private var displayLink    : CADisplayLink!
     private var startTime      : TimeInterval = 0
-    private var duration       : TimeInterval = 0.5
+    private var duration       : TimeInterval = 1
     
     func setValues(_ values:[Quote], animated:Bool, startFrom: Date){
         if animated, let _ = current {
             originalLimit   = currentLimit
             targetLimit     = startFrom
-            displayLink     = CADisplayLink(target: self, selector: #selector(CompoundBar.animateMe))
+            displayLink     = CADisplayLink(target: self, selector: #selector(Line.animateMe))
             startTime       = 0
             
-            displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+            displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
             
         } else {
             current         = values
@@ -125,8 +133,10 @@ import UIKit
     }
     
     func animateMe(){
+        guard let _ = displayLink else { return }
+        
         if startTime == 0 {
-            startTime = displayLink.timestamp
+            startTime = (displayLink?.timestamp)!
             return
         }
 
@@ -136,6 +146,8 @@ import UIKit
 
         if dt > duration {
             displayLink?.invalidate()
+            displayLink?.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+            displayLink = nil
             
             // get a final accurate frame.
             dt = duration
