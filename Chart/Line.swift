@@ -76,8 +76,13 @@ import UIKit
                     continue
                 }
                 
+                let y = (value.Close-minimum)/(maximum-minimum)
+                
+                let p = 0.2
+                let y1 = (y * (1-2*p) ) + p
+                
                 // set value
-                norms.append((value.Close-minimum)/(maximum-minimum))
+                norms.append(y1)
             }
             
             return norms
@@ -120,6 +125,7 @@ import UIKit
     }
     
     class AnimationCurve {
+        private let π = M_PI
         private var target : Double
         private var origin : Double
         
@@ -138,8 +144,41 @@ import UIKit
             let Ti = Double(target)
             
             let Vi = Oi + r * ( Ti - Oi )
-            
         
+            return Vi
+        }
+        
+        func easeIn(dt:Double, duration:Double) -> Double {
+            
+            let x = Double( dt / duration )
+            let θ = x * π * 0.5
+            var r = sin(θ)
+            
+            if r > 1 { r = 1 }
+            if r < 0 { r = 0 }
+            
+            let Oi = Double(origin)
+            let Ti = Double(target)
+            
+            let Vi = Oi + r * ( Ti - Oi )
+            
+            return Vi
+        }
+        
+        func easeInOut(dt:Double, duration:Double) -> Double {
+            
+            let x = Double( dt / duration )
+            let θ = x * π - π * 0.5
+            var r = ( sin(θ) + 1.0 ) / 2.0
+            
+            if r > 1 { r = 1 }
+            if r < 0 { r = 0 }
+            
+            let Oi = Double(origin)
+            let Ti = Double(target)
+            
+            let Vi = Oi + r * ( Ti - Oi )
+            
             return Vi
         }
     }
@@ -201,9 +240,9 @@ import UIKit
             dt = duration
         }
 
-        let s = startAnimationCurve.linear(dt: dt, duration: duration)
-        let m = minAnimationCurve.linear(dt: dt, duration: duration)
-        let x = maxAnimationCurve.linear(dt: dt, duration: duration)
+        let s = startAnimationCurve.easeInOut(dt: dt, duration: duration)
+        let m =   minAnimationCurve.easeInOut(dt: dt, duration: duration)
+        let x =   maxAnimationCurve.easeInOut(dt: dt, duration: duration)
         
         start   = Date(timeIntervalSince1970: s)
         minimum = m
