@@ -97,9 +97,9 @@ class CircleCalculator {
     
         // innter class, defines an arc
     class Arc {
-        private var a1 : Double
-        private var a2 : Double
-        private var i  : Int
+        fileprivate var a1 : Double
+        fileprivate var a2 : Double
+        fileprivate var i  : Int
         
         init(index:Int, startAngle:Double, endAngle:Double){
             i    = index

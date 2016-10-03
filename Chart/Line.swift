@@ -21,10 +21,10 @@ import UIKit
     
     class RangeCalculator {
         
-        private var values  : [Quote]
-        private var maximum : Double = 0
-        private var minimum : Double = 999999999999
-        private var start   : Date
+        fileprivate var values  : [Quote]
+        fileprivate var maximum : Double = 0
+        fileprivate var minimum : Double = 999999999999
+        fileprivate var start   : Date
         
         init(values : [Quote], start : Date){
             self.values = values
@@ -54,10 +54,10 @@ import UIKit
     
     class Calculator {
         
-        private var values  : [Quote]
-        private var maximum : Double
-        private var minimum : Double
-        private var start   : Date
+        fileprivate var values  : [Quote]
+        fileprivate var maximum : Double
+        fileprivate var minimum : Double
+        fileprivate var start   : Date
         
         init(values : [Quote], start : Date, min : Double, max : Double ){
             self.values  = values
@@ -89,8 +89,8 @@ import UIKit
         }
     }
     
-    @IBInspectable var fillColor   : UIColor = UIColor.black()
-    @IBInspectable var strokeColor : UIColor = UIColor.black()
+    @IBInspectable var fillColor   : UIColor = UIColor.black
+    @IBInspectable var strokeColor : UIColor = UIColor.black
     
     override func draw(_ rect: CGRect) {
         
@@ -125,16 +125,16 @@ import UIKit
     }
     
     class AnimationCurve {
-        private let π = M_PI
-        private var target : Double
-        private var origin : Double
+        fileprivate let π = M_PI
+        fileprivate var target : Double
+        fileprivate var origin : Double
         
         init( origin: Double, target: Double ){
             self.origin = origin
             self.target = target
         }
         
-        func linear(dt:Double, duration:Double) -> Double {
+        func linear(_ dt:Double, duration:Double) -> Double {
             var r = Double( dt / duration )
             
             if r > 1 { r = 1 }
@@ -148,7 +148,7 @@ import UIKit
             return Vi
         }
         
-        func easeIn(dt:Double, duration:Double) -> Double {
+        func easeIn(_ dt:Double, duration:Double) -> Double {
             
             let x = Double( dt / duration )
             let θ = x * π * 0.5
@@ -165,7 +165,7 @@ import UIKit
             return Vi
         }
         
-        func easeInOut(dt:Double, duration:Double) -> Double {
+        func easeInOut(_ dt:Double, duration:Double) -> Double {
             
             let x = Double( dt / duration )
             let θ = x * π - π * 0.5
@@ -184,18 +184,18 @@ import UIKit
     }
     
     // Animations
-    private var current             : [Quote]?
-    private var start               : Date = Date()
-    private var minimum             : Double = 0
-    private var maximum             : Double = 0
+    fileprivate var current             : [Quote]?
+    fileprivate var start               : Date = Date()
+    fileprivate var minimum             : Double = 0
+    fileprivate var maximum             : Double = 0
     
-    private var minAnimationCurve   : AnimationCurve!
-    private var maxAnimationCurve   : AnimationCurve!
-    private var startAnimationCurve : AnimationCurve!
+    fileprivate var minAnimationCurve   : AnimationCurve!
+    fileprivate var maxAnimationCurve   : AnimationCurve!
+    fileprivate var startAnimationCurve : AnimationCurve!
     
-    private var displayLink    : CADisplayLink!
-    private var startTime      : TimeInterval = 0
-    private var duration       : TimeInterval = 1
+    fileprivate var displayLink    : CADisplayLink!
+    fileprivate var startTime      : TimeInterval = 0
+    fileprivate var duration       : TimeInterval = 1
     
     func setValues(_ values:[Quote], animated:Bool, startFrom: Date){
         if animated, let _ = current {
@@ -240,9 +240,9 @@ import UIKit
             dt = duration
         }
 
-        let s = startAnimationCurve.easeInOut(dt: dt, duration: duration)
-        let m =   minAnimationCurve.easeInOut(dt: dt, duration: duration)
-        let x =   maxAnimationCurve.easeInOut(dt: dt, duration: duration)
+        let s = startAnimationCurve.easeInOut(dt, duration: duration)
+        let m =   minAnimationCurve.easeInOut(dt, duration: duration)
+        let x =   maxAnimationCurve.easeInOut(dt, duration: duration)
         
         start   = Date(timeIntervalSince1970: s)
         minimum = m

@@ -60,7 +60,7 @@ import UIKit
             //
             // sort
             //
-            model.rows.sort { (v0:Area.Element,v1:Area.Element) -> Bool in
+            model.rows = model.rows.sorted { (v0:Area.Element,v1:Area.Element) -> Bool in
                 
                 v0.width() > v1.width()
             }
@@ -177,6 +177,6 @@ import UIKit
         path.fill()
     }
     
-    private let threshold = Double(0.05)
+    fileprivate let threshold = Double(0.05)
 }
 

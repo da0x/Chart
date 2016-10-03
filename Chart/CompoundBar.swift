@@ -7,20 +7,31 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 
 @IBDesignable class CompoundBar : UIView {
     
     @IBInspectable var v1 : CGFloat = CGFloat(100)
-    @IBInspectable var C1 : UIColor = UIColor.blue()
+    @IBInspectable var C1 : UIColor = UIColor.blue
     @IBInspectable var v2 : CGFloat  = CGFloat(100)
-    @IBInspectable var C2 : UIColor = UIColor.green()
+    @IBInspectable var C2 : UIColor = UIColor.green
     @IBInspectable var v3 : CGFloat  = CGFloat(100)
-    @IBInspectable var C3 : UIColor = UIColor.orange()
+    @IBInspectable var C3 : UIColor = UIColor.orange
     @IBInspectable var v4 : CGFloat  = CGFloat(100)
-    @IBInspectable var C4 : UIColor = UIColor.gray()
+    @IBInspectable var C4 : UIColor = UIColor.gray
     @IBInspectable var v5 : CGFloat  = CGFloat(100)
-    @IBInspectable var C5 : UIColor = UIColor.magenta()
+    @IBInspectable var C5 : UIColor = UIColor.magenta
     @IBInspectable var seperator = CGFloat(2)
 
 
@@ -58,12 +69,12 @@ import UIKit
     
     
     // Animations
-    private var current : [Double]?
-    private var target  : [Double]?
-    private var displayLink : CADisplayLink!
-    private var original    : [Double]?
-    private var startTime   : TimeInterval = 0
-    private var duration    : TimeInterval = 2
+    fileprivate var current : [Double]?
+    fileprivate var target  : [Double]?
+    fileprivate var displayLink : CADisplayLink!
+    fileprivate var original    : [Double]?
+    fileprivate var startTime   : TimeInterval = 0
+    fileprivate var duration    : TimeInterval = 2
     
     func setValues(_ values:[Double], animated:Bool){
         if animated, let _ = current {

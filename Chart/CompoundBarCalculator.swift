@@ -16,10 +16,10 @@ class CompoundBarChartCalculator {
         var end   = Double(1)
     }
     
-    private var values          : [Double]!
-    private var height          : Double!
-    private var total           : Double!
-    private var seperator       : Double!
+    fileprivate var values          : [Double]!
+    fileprivate var height          : Double!
+    fileprivate var total           : Double!
+    fileprivate var seperator       : Double!
     
     init( Values : [Double], Height : Double, Seperator : Double){
         values         = Values

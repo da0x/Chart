@@ -19,10 +19,10 @@ class Quote {
     }
     init(dictionary: [String:String]){
         self.Close =  Double(dictionary["Close"]!) ?? 0
-        self.Date  =  Quote.date(string: dictionary["Date"]!)
+        self.Date  =  Quote.date(dictionary["Date"]!)
     }
     
-    static func date(string:String) -> Date {
+    static func date(_ string:String) -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: string)!
@@ -39,14 +39,15 @@ class LineData {
             let years = ["2008","2009","2010","2011","2012","2013","2014","2015","2016"]
             
             for year in years {
-                let data = try Data(contentsOf:self.url(year:year))
+                let data = try Data(contentsOf:self.url(year))
                 let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:AnyObject]
                 
-                let query   = json?["query"]
-                let results = query?["results"]
-                let quote   = results??["quote"]
-                
-                importTheData(array: (quote as? Array<AnyObject>)!)
+                if let query   = json?["query"] as? [String:AnyObject] {
+                    let results = query["results"] as? [String:AnyObject]
+                    let quote   = results?["quote"]
+                    
+                    importTheData((quote as? Array<AnyObject>)!)
+                }
             }
             
             sortTheData()
@@ -62,7 +63,7 @@ class LineData {
         return quotes
     }
     
-    private func importTheData(array: [AnyObject]){
+    fileprivate func importTheData(_ array: [AnyObject]){
         
         for obj in array {
             let quote = Quote(dictionary: (obj as? [String:String])!)
@@ -70,13 +71,13 @@ class LineData {
         }
     }
     
-    private func sortTheData(){
+    fileprivate func sortTheData(){
         quotes.sort { (q1, q2) -> Bool in
             return q1.Date.timeIntervalSince(q2.Date) < 0
         }
     }
     
-    private func filterTheData(){
+    fileprivate func filterTheData(){
         
         var remove = [Int]() // indecies to remove
         
@@ -100,22 +101,22 @@ class LineData {
         }
     }
     
-    private func printTheData(){
+    fileprivate func printTheData(){
         for quote in quotes {
             print("++++ \(quote.Date) \t\t: \(quote.Close)")
         }
     }
     
-    private func month(of date:Date) -> Int {
+    fileprivate func month(of date:Date) -> Int {
         let calendar = Calendar.current
-        let component = calendar.component(Calendar.Unit.month, from: date)
+        let component = calendar.component(Calendar.Component.month, from: date)
         return component
     }
     
-    private let offline = true
-    private func url(year:String) -> URL {
+    fileprivate let offline = true
+    fileprivate func url(_ year:String) -> URL {
         if offline {
-            let path = Bundle.main.pathForResource("ACWI-\(year)-yql", ofType:"json")
+            let path = Bundle.main.path(forResource: "ACWI-\(year)-yql", ofType:"json")
             return URL(fileURLWithPath: path!)
         }
         
